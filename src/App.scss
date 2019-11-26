@@ -1,0 +1,13 @@
+/* Importing system wide fonts */
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem !important;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}

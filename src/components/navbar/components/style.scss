@@ -1,0 +1,73 @@
+.navbar {
+  padding: 15px 16px;
+  background-color: #ffffff;
+  position: sticky;
+  position: -webkit-sticky;
+
+  .navbar-group {
+    border-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    line-height: 2;
+    font-size: 1.2rem;
+  }
+
+  .nav-logo {
+    margin-right: auto !important;
+    padding-left: 0;
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &:hover {
+      border: none !important;
+    }
+  }
+
+  .button-link {
+    padding-left: 0;
+    padding-right: 16px;
+    border-bottom: none;
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &:hover {
+      border: none !important;
+    }
+
+    &.pr-0 {
+      padding-right: 0;
+    }
+  }
+
+}
+
+//Button Styling
+.btn-primary {
+  background-color: #1890FF;
+  padding: 0.3rem 1.5rem;
+  color: #ffffff !important;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #1182B3;
+  }
+
+  &.-alternate {
+    background-color: transparent;
+    border-color: #1890FF;
+    color: #1890FF !important;
+
+    &:hover {
+      background-color: #C5EEFF;
+    }
+  }
+}
