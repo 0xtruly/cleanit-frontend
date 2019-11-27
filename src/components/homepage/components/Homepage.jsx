@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 import { Title, Helmet_Strings, Main_Content } from "../constants";
-import Artwork from "../images/hero-illustration.svg";
 
 const Page_Helmet = () => {
   //De-structuring needed constants from Helmet_Strings
