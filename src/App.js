@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import AOS from "aos";
-import "aos/dist/aos.css";
+import Navbar from "./components/navbar/components/";
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
@@ -14,6 +14,10 @@ import "aos/dist/aos.css";
 
 class App extends Component {
 	componentDidMount() {
+		/**
+		 * Initializing the AOS library with options across the app
+		 */
+
 		AOS.init({
 			duration: 1200,
 			delay: 10,
@@ -25,9 +29,7 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-				<Switch>
-					<Route path="/" exact component={} />
-				</Switch>
+				<Navbar />
 			</Router>
 		);
 	}
