@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.scss";
 import Navbar from "./components/navbar/components/";
-import Homepage from "./components/homepage/components/";
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
@@ -30,14 +28,7 @@ class App extends Component {
 	}
 
 	render() {
-		return (
-			<Router>
-				<Navbar />
-				<Switch>
-					<Route path="/" exact component={Homepage} />
-				</Switch>
-			</Router>
-		);
+		return <Navbar />;
 	}
 }
 
