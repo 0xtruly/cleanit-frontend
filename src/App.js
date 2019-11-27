@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import AOS from "aos";
-import "aos/dist/aos.css";
-import "./App.scss";
 import Navbar from "./components/navbar/components/";
 /**
  * Default AppJS file.
