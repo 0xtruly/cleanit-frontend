@@ -16,7 +16,6 @@ const Navbar = () => {
    * @listens {event} to dtermine which of the navbar element is active using the "key" parameter on the menu item
    */
   const handleClick = e => {
-    console.log("click ", e);
     setCurrentNav(e.key);
   };
 
