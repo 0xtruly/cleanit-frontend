@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-literals */
-/* eslint-disable react/jsx-tag-spacing */
 import React from 'react';
 import {
     Form, Input, Button, Card
@@ -7,16 +6,19 @@ import {
 import { NavLink } from 'react-router-dom';
 import Logo from '../../../assets/logo.svg';
 
+/** This is the main component
+ * for the form
+*/
+
 // eslint-disable-next-line max-lines-per-function
 const SignupForm = () => {
     const { Item } = Form;
-
     return (
         <div className="formContainer" data-test="formContainer">
             <Card className="formCard">
-                <h3>Welcome</h3>
-                <p>Join as a User</p>
-                <Form className="sign-form" layout="horizontal" >
+                <h3> Welcome </h3>
+                <p> Join as a User </p>
+                <Form className="sign-form" layout="horizontal">
                     <Item>
                         <Input placeholder="Your Name" />
                     </Item>

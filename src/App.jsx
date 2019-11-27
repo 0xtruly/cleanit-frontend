@@ -13,7 +13,7 @@ import 'aos/dist/aos.css';
  * Remember to import Link from reaxct-router-dom
  *
  * AOS (Animate-On-Scroll) is a simple animation library.
- * Read about it here: https://github.com/michalsnik/aos
+ *Read about it here: https://github.com/michalsnik/aos
  */
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route path="/signup" exact component={Signup} />
+                    <Route path="/sign-up" exact component={Signup} />
                 </Switch>
             </Router>
         );
