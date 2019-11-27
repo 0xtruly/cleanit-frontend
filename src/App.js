@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.scss";
@@ -28,7 +29,11 @@ class App extends Component {
 	}
 
 	render() {
-		return <Navbar />;
+		return (
+			<Router>
+				<Navbar />
+			</Router>
+		);
 	}
 }
 
