@@ -1,0 +1,58 @@
+.hero-section {
+
+  .h-100 {
+    height: 100%;
+  }
+
+  .hv-100 {
+    height: 90vh;
+
+    @media screen and (max-width: 1024px) {
+      height: auto;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+
+  .hero-illustration {
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1024px) {
+      width: 70%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.blue-text {
+  color: #1890FF !important;
+}
+
+.btn-primary {
+  &.-large {
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+  }
+
+  &.-mr-2 {
+    margin-right: 20px;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
