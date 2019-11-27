@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Enye-Team-Cougar/cleanit-frontend.svg?branch=master)](https://travis-ci.org/Enye-Team-Cougar/cleanit-frontend) [![Coverage Status](https://coveralls.io/repos/github/Enye-Team-Cougar/cleanit-frontend/badge.svg?branch=master)](https://coveralls.io/github/Enye-Team-Cougar/cleanit-frontend?branch=master)
+
+
 # CleanIT Frontend Application
 
 This is a User-Vendor Laundry Service Application.

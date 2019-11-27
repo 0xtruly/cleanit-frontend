@@ -1,0 +1,100 @@
+// SignupForm.js
+@mixin centralize {
+    display: grid;
+    place-items: center;
+}
+
+.formContainer{
+    max-width: 500px;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 290px;
+    display: flex;
+    flex-flow: column;
+}
+.formCard{
+    border: none;
+    background: #FEFEFE;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.14);
+    h3{
+        color: #1890FF;
+        font-size: 20px;
+        @include centralize();
+    }
+    p{
+        color: #979797;
+        font-size: 12px;
+        @include centralize();
+    }
+}
+
+.socialsCard{
+    background: #083B69;
+    height: 8rem;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    justify-content: space-around;
+    .ant-card-body{
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+    .text{
+        display: none;
+    }
+}
+
+.ant-btn-danger{
+    .btnSocial-google &{
+        width: 100%;
+        background: #EA5A0A;
+        margin-top: 1rem;
+    }
+}
+.ant-btn-primary{
+    .formCard &{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 48rem){
+    .formContainer{
+        width: 400px;
+        margin: 4rem auto;   
+    }
+
+    .signIn {
+        .sign-form &{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media only screen and (min-width: 62rem) {
+    .formContainer{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        max-width: 800px;
+        width: 600px;
+    }
+
+    .socialsCard{
+        height: unset;
+        display: grid;
+        border-radius: 0px 5px 5px 0px;
+        .text{
+            display: block;
+            & > .logo{
+                display: table;
+                margin: 0 auto;
+                width: 60px;
+            }
+            & p{
+                color: #ffffff;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
