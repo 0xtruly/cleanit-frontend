@@ -31,14 +31,19 @@ const Navbar = () => {
               mode="horizontal"
             >
               {menuItems.map(menu => {
+                const {
+                  key,
+                  className,
+                  linkClassName,
+                  linkTo,
+                  img,
+                  imgAlt,
+                  text
+                } = menu;
                 return (
-                  <Menu.Item key={menu.key} className={menu.className}>
-                    <Link className={menu.linkClassName} to={menu.linkTo}>
-                      {menu.img ? (
-                        <img src={menu.img} alt={menu.imgAlt} />
-                      ) : (
-                        menu.text
-                      )}
+                  <Menu.Item key={key} className={className}>
+                    <Link className={linkClassName} to={linkTo}>
+                      {img ? <img src={img} alt={imgAlt} /> : text}
                     </Link>
                   </Menu.Item>
                 );
