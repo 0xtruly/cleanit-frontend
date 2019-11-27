@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Row, Col } from "antd";
-import Logo from "../images/placeholder-logo.svg";
+import { menuItems } from "../constants";
 
 /**
  * This is th Navbar component that spans the entire App.
@@ -36,35 +36,19 @@ class Navbar extends Component {
                 selectedKeys={[this.state.current]}
                 mode="horizontal"
               >
-                <Menu.Item className="nav-logo">
-                  <Link to="/">
-                    <img src={Logo} alt="logo" />
-                  </Link>
-                </Menu.Item>
-
-                {/* Home Menu Item */}
-                <Menu.Item key="home">
-                  <Link to="/">Home</Link>
-                </Menu.Item>
-
-                {/* Home Menu Item */}
-                <Menu.Item key="about">
-                  <Link to="/">About</Link>
-                </Menu.Item>
-
-                {/* Sign Up Button */}
-                <Menu.Item className="button-link">
-                  <Link className="btn-primary" to="/sign-up">
-                    Sign Up
-                  </Link>
-                </Menu.Item>
-
-                {/* Login Button */}
-                <Menu.Item className="button-link pr-0">
-                  <Link className="btn-primary -alternate" to="/login">
-                    Login
-                  </Link>
-                </Menu.Item>
+                {menuItems.map(menu => {
+                  return (
+                    <Menu.Item key={menu.key} className={menu.className}>
+                      <Link className={menu.linkClassName} to={menu.linkTo}>
+                        {menu.img ? (
+                          <img src={menu.img} alt={menu.imgAlt} />
+                        ) : (
+                          menu.text
+                        )}
+                      </Link>
+                    </Menu.Item>
+                  );
+                })}
               </Menu>
             </div>
           </Col>
