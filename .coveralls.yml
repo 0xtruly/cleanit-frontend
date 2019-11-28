@@ -1,1 +1,1 @@
-repo_token: ux8CK5qEKBYXrd3lORy92BQpfE6V3yJ5d
+repo_token: process.env.REPO_TOKEN
