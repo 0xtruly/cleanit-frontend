@@ -1,5 +1,5 @@
-import "./homepage.scss"
-import Homepage from "./Homepage"
+import './homepage.scss';
+import Homepage from './Homepage';
 
 export default
-Homepage
+Homepage;
