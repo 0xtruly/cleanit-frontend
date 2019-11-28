@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
-import Title from "antd/lib/typography";
+import Title from "antd/lib/typography/Title";
 import { MAIN_CONTENT } from "../constants";
 
 //De-structuring needed constants from MAIN_CONTENT
