@@ -10,9 +10,7 @@ import loginToFirebase from '../firebase';
  */
 export const loginUser = (email, password) => dispatch => {
     dispatch(requestLogin());
-    loginToFirebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
+    loginToFirebase.auth().signInWithEmailAndPassword(email, password)
         .then(user => {
             dispatch(receiveLogin(user));
         })
