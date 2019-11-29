@@ -4,12 +4,17 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import AOS from 'aos';
 import Homepage from './components/homepage/components';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Navbar from './components/navbar/components';
 import Signup from './components/signup/components';
 
 =======
 import Login from './components/login/components/index';
 >>>>>>> Setting up firebase Auth
+=======
+import Navbar from './components/navbar/components';
+
+>>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
@@ -42,10 +47,13 @@ class App extends Component {
                 <Switch>
                     <Route path="/" exact component={Homepage} />
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <Route path="/sign-up" exact component={Signup} />
 =======
                     <Route path="/login" component={Login} />
 >>>>>>> Setting up firebase Auth
+=======
+>>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
                 </Switch>
             </Router>
         );
