@@ -1,7 +1,7 @@
 import React from 'react';
-import SignupForm from './SignupForm';
-import PageHelmet from '../../homepage/components/PageHelmet';
 import './style.scss';
+import PageHelmet from '../../homepage/components/PageHelmet';
+import SignupForm from './SignupForm';
 
 /** This is the main component
  * for the user signup

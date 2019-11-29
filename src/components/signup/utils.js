@@ -12,12 +12,14 @@ export const createNewUserAccount = user => {
     const userDetails = { userAuth: user, userType: USER };
     const config = { headers: { 'Content-Type': 'application/json' } };
     const body = JSON.stringify(userDetails);
-    axios.post(SIGNUP_ENDPOINT, body, config)
+    axios
+        .post(SIGNUP_ENDPOINT, body, config)
         .then(response => {
             if (response.ok) {
                 console.log(response);
             }
-        }).catch(error => {
+        })
+        .catch(error => {
             console.error(error);
         });
 };

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AOS from 'aos';
-import Navbar from './components/navbar/components';
 import Homepage from './components/homepage/components';
+import Navbar from './components/navbar/components';
 import { Signup } from './components/signup/components';
 /**
  * Default AppJS file.
