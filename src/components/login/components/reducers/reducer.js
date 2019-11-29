@@ -26,53 +26,35 @@ export default (
     switch (action.type) {
     case LOGIN_REQUEST:
         return {
-            ...state,
-            isLoggingIn: true,
-            loginError: false,
+            ...state, isLoggingIn: true, loginError: false,
         };
     case LOGIN_SUCCESS:
         return {
-            ...state,
-            isAuthenticated: true,
-            isLoggingIn: false,
-            user: action.user,
+            ...state, isAuthenticated: true, isLoggingIn: false, user: action.user,
         };
     case LOGIN_FAILURE:
         return {
-            ...state,
-            isAuthenticated: false,
-            isLoggingIn: false,
-            loginError: action.error,
+            ...state, isAuthenticated: false, isLoggingIn: false, loginError: action.error,
         };
     case LOGOUT_REQUEST:
         return {
-            ...state,
-            isLoggingOut: true,
-            logoutError: false,
+            ...state, isLoggingOut: true, logoutError: false,
         };
     case LOGOUT_SUCCESS:
         return {
-            ...state,
-            isAuthenticated: false,
-            isLoggingOut: false,
-            user: {},
+            ...state, isAuthenticated: false, isLoggingOut: false, user: {},
         };
     case LOGOUT_FAILURE:
         return {
-            ...state,
-            isLoggingOut: false,
-            logoutError: action.error,
+            ...state, isLoggingOut: false, logoutError: action.error,
         };
     case VERIFY_REQUEST:
         return {
-            ...state,
-            isVerifying: true,
-            verifyingError: false,
+            ...state, isVerifying: true, verifyingError: false,
         };
     case VERIFY_SUCCESS:
         return {
-            ...state,
-            isVerifying: false,
+            ...state, isVerifying: false,
         };
     default:
         return state;

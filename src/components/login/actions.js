@@ -8,9 +8,7 @@ import {
  *
  * @constant
  */
-export const requestLogin = () => ({
-    type: LOGIN_REQUEST,
-});
+export const requestLogin = () => ({ type: LOGIN_REQUEST });
 
 /**
  * Receiving User Object from Firebase on successful login
@@ -18,10 +16,7 @@ export const requestLogin = () => ({
  * @constant
  */
 
-export const receiveLogin = user => ({
-    type: LOGIN_SUCCESS,
-    user,
-});
+export const receiveLogin = user => ({ type: LOGIN_SUCCESS, user });
 
 /**
  * This describes a case where there is a login failure
@@ -30,8 +25,7 @@ export const receiveLogin = user => ({
  */
 
 export const loginError = error => ({
-    type: LOGIN_FAILURE,
-    // eslint-disable-next-line sort-keys
+    type: LOGIN_FAILURE, // eslint-disable-next-line sort-keys
     error,
 });
 
@@ -40,9 +34,7 @@ export const loginError = error => ({
  *
  * @constant
  */
-export const requestLogout = () => ({
-    type: LOGOUT_REQUEST,
-});
+export const requestLogout = () => ({ type: LOGOUT_REQUEST });
 
 /**
 * Receive data from Firebase on successful logout
@@ -50,10 +42,7 @@ export const requestLogout = () => ({
 * @constant
 */
 
-export const receiveLogout = user => ({
-    type: LOGOUT_SUCCESS,
-    user,
-});
+export const receiveLogout = user => ({ type: LOGOUT_SUCCESS, user });
 
 /**
 * This describes a case where there is a logout failure
@@ -73,9 +62,7 @@ export const logoutError = error => ({
 * @constant
 */
 
-export const verifyRequest = () => ({
-    type: VERIFY_REQUEST,
-});
+export const verifyRequest = () => ({ type: VERIFY_REQUEST });
 
 /**
 * This describes a verification process for a successful App-Firebase connection
@@ -83,6 +70,4 @@ export const verifyRequest = () => ({
 * @constant
 */
 
-export const verifySuccess = () => ({
-    type: VERIFY_SUCCESS,
-});
+export const verifySuccess = () => ({ type: VERIFY_SUCCESS });
