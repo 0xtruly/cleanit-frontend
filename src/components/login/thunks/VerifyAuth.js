@@ -1,5 +1,5 @@
 import { verifyRequest, receiveLogin, verifySuccess } from '../actions';
-import loginToFirebase from '../firebase';
+import loginToFirebase from '../../../firebase';
 
 export const verifyAuth = () => dispatch => {
     dispatch(verifyRequest());

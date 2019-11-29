@@ -8,7 +8,7 @@ import {
     LOGOUT_FAILURE,
     VERIFY_REQUEST,
     VERIFY_SUCCESS
-} from '../../actionTypes';
+} from './actionTypes';
 
 const initialState = {
     isAuthenticated: false,
