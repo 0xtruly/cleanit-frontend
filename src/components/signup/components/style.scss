@@ -28,22 +28,6 @@
     }
 }
 
-.socialsCard {
-    background: #083B69;
-    height: 8rem;
-    border-radius: 0px 0px 5px 5px;
-    display: flex;
-    justify-content: space-around;
-    .ant-card-body {
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-    }
-    .text {
-        display: none;
-    }
-}
-
 .ant-btn-danger {
     .btnSocial-google & {
         width: 100%;
@@ -77,24 +61,5 @@
         grid-template-columns: 3fr 1fr;
         max-width: 800px;
         width: 600px;
-    }
-
-    .socialsCard {
-        height: unset;
-        display: grid;
-        border-radius: 0px 5px 5px 0px;
-        .text {
-            display: block;
-            & > .logo {
-                display: table;
-                margin: 0 auto;
-                width: 60px;
-            }
-            & p {
-                color: #ffffff;
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-        }
     }
 }
