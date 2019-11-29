@@ -4,11 +4,13 @@ import Logo from './images/logo.svg';
 export const STRINGS = {
     ALREADY: 'Already have an account?',
     CREATE_ACCOUNT: 'Create Account',
-    ENPOINT: 'https://jsonplaceholder.typicode.com/posts',
     JOIN: 'Join as a User',
     LOGIN: 'Login using social media to gain quick access',
     LOGO: Logo,
     SIGNIN: 'Sign in',
+    SIGNUP_ENDPOINT: 'https://us-central1-cleanit-7147d.cloudfunctions.net/app/api/v1/auth/',
+    USER: 'user',
+    VENDOR: 'vendor',
     WELCOME: 'Welcome',
 };
 

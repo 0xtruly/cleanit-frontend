@@ -1,23 +1,23 @@
 import axios from 'axios';
 import { STRINGS } from './constants';
 
-const { ENDPOINT } = STRINGS;
+const { SIGNUP_ENDPOINT, USER } = STRINGS;
 
 /** this is a test post request
  * and should not be considered
  * a real endpoint for user signup
  */
 
-export const apiRequest = () => {
-    axios.post(ENDPOINT, {
-        body: 'lava',
-        title: 'java',
-        userId: 1,
-    }).then(res => {
-        if (res.ok) {
-            console.log(res);
-        }
-    }).catch(error => {
-        console.error(error);
-    });
+export const createNewUserAccount = user => {
+    const userDetails = { userAuth: user, userType: USER };
+    const config = { headers: { 'Content-Type': 'application/json' } };
+    const body = JSON.stringify(userDetails);
+    axios.post(SIGNUP_ENDPOINT, body, config)
+        .then(response => {
+            if (response.ok) {
+                console.log(response);
+            }
+        }).catch(error => {
+            console.error(error);
+        });
 };
