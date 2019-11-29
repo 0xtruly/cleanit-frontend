@@ -1,10 +1,23 @@
 /* eslint-disable max-lines-per-function */
+<<<<<<< HEAD
 import * as actionTypes from './actionTypes';
 // Destructuring actionTYpes
 const {
     LOGIN_REQUEST, LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_FAILURE, LOGOUT_REQUEST,
     LOGOUT_SUCCESS, VERIFY_REQUEST, VERIFY_SUCCESS,
 } = actionTypes;
+=======
+import {
+    LOGIN_REQUEST,
+    LOGIN_SUCCESS,
+    LOGIN_FAILURE,
+    LOGOUT_REQUEST,
+    LOGOUT_SUCCESS,
+    LOGOUT_FAILURE,
+    VERIFY_REQUEST,
+    VERIFY_SUCCESS
+} from './actionTypes';
+>>>>>>> File structure clean-up,login-reducer, firebase and rootReducer
 
 const initialState = {
     isAuthenticated: false,

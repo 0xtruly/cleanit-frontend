@@ -1,5 +1,5 @@
 import { requestLogin, receiveLogin, loginError } from '../actions';
-import loginToFirebase from '../firebase';
+import loginToFirebase from '../../../firebase';
 
 /**
  * Login User thunk dispatching actions from Firebase Auth
