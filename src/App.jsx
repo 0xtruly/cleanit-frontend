@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AOS from 'aos';
 import Homepage from './components/homepage/components';
 import Navbar from './components/navbar/components';
-import { Signup } from './components/signup/components';
+import Signup from './components/signup/components';
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
