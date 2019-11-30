@@ -1,6 +1,10 @@
-
+/**
+ * Exports meta tags strings
+ *
+ * @constant
+ */
 const META_TAGS = [{
-    charSet: 'utf-8',
+    charset: 'utf-8',
 }, {
     metaContent: 'We remain commited to helping you worry less about your laundry. ',
     metaContentMore: 'Login to continue your stress-free laundry-happy life.',
