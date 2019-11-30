@@ -3,11 +3,12 @@
  *
  * @constant
  */
+const contentString1 = 'We remain commited to helping you worry less about your laundry. ';
+const contentString2 = 'Login to continue your stress-free laundry-happy life.';
 const META_TAGS = [
     { charset: 'utf-8' },
     {
-        content: 'We remain commited to helping you worry less about your laundry. ',
-        contentMore: 'Login to continue your stress-free laundry-happy life.',
+        content: `${contentString1}${contentString2}`,
         name: 'description',
     },
     {

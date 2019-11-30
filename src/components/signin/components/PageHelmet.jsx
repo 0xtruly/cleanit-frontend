@@ -15,8 +15,8 @@ export default function PageHelmet() {
     return (
         <Helmet titleTemplate={TITLE_TEMPLATE} defaultTitle={TITLE_TEMPLATE_DEFAULT_TITLE}>
             {META_TAGS.map(tag => {
-                const { name, content, contentMore } = tag;
-                return (<meta key={name} name={name} content={content + contentMore} />);
+                const { name, content } = tag;
+                return (<meta key={name} name={name} content={content} />);
             })}
             <title itemProp="name" lang="en">
                 {PAGE_TITLE}
