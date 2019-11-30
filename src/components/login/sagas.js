@@ -1,6 +1,9 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
-import * as actions from './actions';
 import * as actionTypes from './actionTypes';
+import * as actions from './actions';
+
+// eslint-disable-next-line import/order
+import { call, put, takeEvery } from 'redux-saga/effects';
+
 import loginToFirebase from '../../firebase';
 
 // Destructuring actionTYpes
