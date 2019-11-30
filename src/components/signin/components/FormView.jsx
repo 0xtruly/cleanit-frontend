@@ -1,9 +1,8 @@
 import { Col, Row } from 'antd';
 
-// eslint-disable-next-line import/order
-import { LOGIN_STRINGS } from '../constants';
 import React from 'react';
 import Title from 'antd/lib/typography/Title';
+import { LOGIN_STRINGS } from '../constants';
 
 const {
     LOGIN_TITLE, LOGIN_TITLE_SUBTEXT,

@@ -1,8 +1,7 @@
+import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
-// eslint-disable-next-line import/order
-import axios from 'axios';
-
+// Destructuring actionTypes
 const {
     LOGIN_REQUEST,
     LOGIN_FAILURE,

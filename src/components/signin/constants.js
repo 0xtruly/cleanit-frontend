@@ -3,24 +3,24 @@
  *
  * @constant
  */
-const META_TAGS = [{
-    charset: 'utf-8',
-}, {
-    metaContent: 'We remain commited to helping you worry less about your laundry. ',
-    metaContentMore: 'Login to continue your stress-free laundry-happy life.',
-    metaName: 'description',
-}, {
-    metaContent: 'width=device-width, initial-scale=1',
-    metaContentMore: '',
-    metaName: 'viewport',
-}];
+const META_TAGS = [
+    { charset: 'utf-8' },
+    {
+        metaContent: 'We remain commited to helping you worry less about your laundry. ',
+        metaContentMore: 'Login to continue your stress-free laundry-happy life.',
+        metaName: 'description',
+    },
+    {
+        metaContent: 'width=device-width, initial-scale=1',
+        metaContentMore: '',
+        metaName: 'viewport',
+    }];
 
 /**
  * Exports React Helmet related  Strings
  *
  * @constant
  */
-
 export const HELMET_STRINGS = {
     CANON_LINK: 'http://mysite.com/example',
     META_TAGS,
@@ -34,7 +34,6 @@ export const HELMET_STRINGS = {
  *
  * @constant
  */
-
 export const LOGIN_STRINGS = {
     CTA_TEXT: 'Sign In',
     EMAIL_PLACEHOLDER: 'Email Address',
