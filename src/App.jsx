@@ -5,7 +5,11 @@ import AOS from 'aos';
 import Homepage from './components/homepage/components';
 import Login from './components/login/components/index';
 import Navbar from './components/navbar/components';
+<<<<<<< Updated upstream
 import Signup from './components/signup/components';
+=======
+import SignIn from './components/login/components';
+>>>>>>> Stashed changes
 
 /**
  * Default AppJS file.
@@ -38,8 +42,12 @@ class App extends Component {
                 <Navbar />
                 <Switch>
                     <Route path="/" exact component={Homepage} />
+<<<<<<< Updated upstream
                     <Route path="/sign-up" exact component={Signup} />
                     <Route path="/login" component={Login} />
+=======
+                    <Route path="/sign-in" exact component={SignIn} />
+>>>>>>> Stashed changes
                 </Switch>
             </Router>
         );
