@@ -6,14 +6,14 @@
 const META_TAGS = [
     { charset: 'utf-8' },
     {
-        metaContent: 'We remain commited to helping you worry less about your laundry. ',
-        metaContentMore: 'Login to continue your stress-free laundry-happy life.',
-        metaName: 'description',
+        content: 'We remain commited to helping you worry less about your laundry. ',
+        contentMore: 'Login to continue your stress-free laundry-happy life.',
+        name: 'description',
     },
     {
-        metaContent: 'width=device-width, initial-scale=1',
-        metaContentMore: '',
-        metaName: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+        contentMore: '',
+        name: 'viewport',
     }];
 
 /**

@@ -11,13 +11,12 @@ const {
     CANON_LINK,
 } = HELMET_STRINGS;
 
-const w = Math.random();
 export default function PageHelmet() {
     return (
         <Helmet titleTemplate={TITLE_TEMPLATE} defaultTitle={TITLE_TEMPLATE_DEFAULT_TITLE}>
             {META_TAGS.map(tag => {
-                const { metaName, metaContent, metaContentMore } = tag;
-                return (<meta key={w} name={metaName} content={metaContent + metaContentMore} />);
+                const { name, content, contentMore } = tag;
+                return (<meta key={name} name={name} content={content + contentMore} />);
             })}
             <title itemProp="name" lang="en">
                 {PAGE_TITLE}
