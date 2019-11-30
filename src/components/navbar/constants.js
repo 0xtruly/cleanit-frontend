@@ -36,10 +36,10 @@ const menuItems = [{
 },
 {
     className: 'button-link pr-0',
-    key: 'login',
+    key: 'signIn',
     linkClassName: 'btn-primary -alternate',
-    linkTo: '/login',
-    text: 'Login',
+    linkTo: '/sign-in',
+    text: 'Sign In',
 },
 ];
 

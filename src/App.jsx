@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import AOS from 'aos';
 import Homepage from './components/homepage/components';
 import Navbar from './components/navbar/components';
+import SignIn from './components/signin/components';
 import Signup from './components/signup/components';
 
 /**
@@ -38,6 +39,7 @@ class App extends Component {
                 <Switch>
                     <Route path="/" exact component={Homepage} />
                     <Route path="/sign-up" exact component={Signup} />
+                    <Route path="/sign-in" exact component={SignIn} />
                 </Switch>
             </Router>
         );
