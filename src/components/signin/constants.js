@@ -20,7 +20,6 @@ const META_TAGS = [{
  *
  * @constant
  */
-
 export const HELMET_STRINGS = {
     CANON_LINK: 'http://mysite.com/example',
     META_TAGS,
@@ -34,7 +33,6 @@ export const HELMET_STRINGS = {
  *
  * @constant
  */
-
 export const LOGIN_STRINGS = {
     CTA_TEXT: 'Sign In',
     EMAIL_PLACEHOLDER: 'Email Address',
@@ -44,3 +42,26 @@ export const LOGIN_STRINGS = {
     PASSWORD_PLACEHOLDER: 'Password',
     REMEMBER_ME: 'Remember me',
 };
+
+/**
+ * Exports Form Input elements
+ *
+ * @constant
+ */
+export const FORM_INPUTS = [{
+    iconColor: 'rgba(0,0,0,.25)',
+    iconType: 'mail',
+    inputType: 'email',
+    message: 'Please input your email address!',
+    name: 'userEmail',
+    placeholder: 'Email address',
+    required: true,
+}, {
+    iconColor: 'rgba(0,0,0,.25)',
+    iconType: 'lock',
+    inputType: 'password',
+    message: 'Please input your password',
+    name: 'userPassword',
+    placeholder: 'Password',
+    required: true,
+}];
