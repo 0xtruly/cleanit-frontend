@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/order
-import { HELMET_STRINGS } from '../constants';
 import { Helmet } from 'react-helmet';
 import React from 'react';
+import { HELMET_STRINGS } from '../constants';
 
 // De-structuring needed constants from HELMET_STRINGS
 const {
