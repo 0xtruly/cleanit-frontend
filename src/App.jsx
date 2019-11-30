@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AOS from 'aos';
 import Homepage from './components/homepage/components';
-import Login from './components/login/components/index';
 import Navbar from './components/navbar/components';
 import { Signup } from './components/signup/components';
+
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
@@ -37,7 +37,6 @@ class App extends Component {
                 <Switch>
                     <Route path="/" exact component={Homepage} />
                     <Route path="/sign-up" exact component={Signup} />
-                    <Route path="/login" component={Login} />
                 </Switch>
             </Router>
         );
