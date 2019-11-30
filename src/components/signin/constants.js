@@ -13,7 +13,6 @@ const META_TAGS = [
     },
     {
         content: 'width=device-width, initial-scale=1',
-        contentMore: '',
         name: 'viewport',
     }];
 
