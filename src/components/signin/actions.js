@@ -1,5 +1,7 @@
-import axios from 'axios';
 import * as actionTypes from './actionTypes';
+
+// eslint-disable-next-line import/order
+import axios from 'axios';
 
 const {
     LOGIN_REQUEST, LOGIN_FAILURE, LOGOUT_FAILURE, LOGOUT_REQUEST,
@@ -19,7 +21,6 @@ export const requestLogin = () => ({ type: LOGIN_REQUEST });
  * @constant
  * @param {Object} User - The user object received from firebase on login.
  */
-<<<<<<< HEAD
 export const receiveLogin = async user => {
     const fbfunction = process.env.REACT_APP_USER_AUTH_API;
     const userInfo = { userAuth: user, userType: 'user' };
@@ -28,10 +29,6 @@ export const receiveLogin = async user => {
     const res = await axios.post(fbfunction, body, config);
     return res.data.data.info;
 };
-=======
-
-export const receiveLogin = user => ({ type: LOGIN_SUCCESS, user });
->>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
 
 /**
  * This describes a case where there is a login failure
@@ -39,15 +36,7 @@ export const receiveLogin = user => ({ type: LOGIN_SUCCESS, user });
  * @constant
  * @param {string} error - The error message recieved if a login request fails
  */
-<<<<<<< HEAD
 export const loginError = error => ({ error, type: LOGIN_FAILURE });
-=======
-
-export const loginError = error => ({
-    type: LOGIN_FAILURE, // eslint-disable-next-line sort-keys
-    error,
-});
->>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
 
 /**
  * A logout request by the user
@@ -62,10 +51,6 @@ export const requestLogout = () => ({ type: LOGOUT_REQUEST });
 * @constant
 * @param {Object} User - Sets the user object to null on successful logout.
 */
-<<<<<<< HEAD
-=======
-
->>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
 export const receiveLogout = user => ({ type: LOGOUT_SUCCESS, user });
 
 /**
@@ -81,10 +66,6 @@ export const logoutError = error => ({ error, type: LOGOUT_FAILURE });
 *
 * @constant
 */
-<<<<<<< HEAD
-=======
-
->>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
 export const verifyRequest = () => ({ type: VERIFY_REQUEST });
 
 /**
@@ -92,8 +73,4 @@ export const verifyRequest = () => ({ type: VERIFY_REQUEST });
 *
 * @constant
 */
-<<<<<<< HEAD
-=======
-
->>>>>>> setting up actions, reducers, actionTypes and thunks for the Login Component
 export const verifySuccess = () => ({ type: VERIFY_SUCCESS });

@@ -1,6 +1,7 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+// eslint-disable-next-line import/order
 import { HELMET_STRINGS } from '../constants';
+import { Helmet } from 'react-helmet';
+import React from 'react';
 
 // De-structuring needed constants from HELMET_STRINGS
 const {
@@ -9,6 +10,7 @@ const {
     CHARSET,
     META_DESC,
     META_DESC_CONTENT,
+    META_DESC_CONTENT_2,
     META_VIEWPORT,
     META_VIEWPORT_CONTENT,
     PAGE_TITLE,
@@ -22,7 +24,7 @@ export default function PageHelmet() {
             defaultTitle={TITLE_TEMPLATE_DEFAULT_TITLE}
         >
             <meta charSet={CHARSET} />
-            <meta name={META_DESC} content={META_DESC_CONTENT} />
+            <meta name={META_DESC} content={META_DESC_CONTENT + META_DESC_CONTENT_2} />
             <meta name={META_VIEWPORT} content={META_VIEWPORT_CONTENT} />
             <title itemProp="name" lang="en">
                 {PAGE_TITLE}

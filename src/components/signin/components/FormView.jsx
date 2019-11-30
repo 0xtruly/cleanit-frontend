@@ -1,8 +1,9 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import Title from 'antd/lib/typography/Title';
-import AntdForm from './AntdForm';
+import { Col, Row } from 'antd';
+
+// eslint-disable-next-line import/order
 import { LOGIN_STRINGS } from '../constants';
+import React from 'react';
+import Title from 'antd/lib/typography/Title';
 
 const {
     LOGIN_TITLE, LOGIN_TITLE_SUBTEXT,
@@ -25,7 +26,6 @@ export default function FormView() {
                                 <Title className="blue-text form-title">{LOGIN_TITLE}</Title>
                                 <p>{LOGIN_TITLE_SUBTEXT}</p>
                             </div>
-                            <AntdForm />
                         </Col>
                     </Row>
                 </Col>
