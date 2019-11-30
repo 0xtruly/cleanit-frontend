@@ -7,12 +7,7 @@ import React from 'react';
 const {
     TITLE_TEMPLATE,
     TITLE_TEMPLATE_DEFAULT_TITLE,
-    CHARSET,
-    META_DESC,
-    META_DESC_CONTENT,
-    META_DESC_CONTENT_2,
-    META_VIEWPORT,
-    META_VIEWPORT_CONTENT,
+    META_TAGS,
     PAGE_TITLE,
     CANON_LINK,
 } = HELMET_STRINGS;
@@ -23,9 +18,11 @@ export default function PageHelmet() {
             titleTemplate={TITLE_TEMPLATE}
             defaultTitle={TITLE_TEMPLATE_DEFAULT_TITLE}
         >
-            <meta charSet={CHARSET} />
-            <meta name={META_DESC} content={META_DESC_CONTENT + META_DESC_CONTENT_2} />
-            <meta name={META_VIEWPORT} content={META_VIEWPORT_CONTENT} />
+            {META_TAGS.map(tag => {
+                const { charSet, metaName, metaContent, metaContentMore } = tag;
+                return (charSet ? (<meta charset={charSet} />) : (<meta name={metaName} content={metaContent + metaContentMore} />)
+                );
+            })}
             <title itemProp="name" lang="en">
                 {PAGE_TITLE}
             </title>

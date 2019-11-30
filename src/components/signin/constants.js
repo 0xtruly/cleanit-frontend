@@ -1,3 +1,16 @@
+
+const META_TAGS = [{
+    charSet: 'utf-8',
+}, {
+    metaContent: 'We remain commited to helping you worry less about your laundry. ',
+    metaContentMore: 'Login to continue your stress-free laundry-happy life.',
+    metaName: 'description',
+}, {
+    metaContent: 'width=device-width, initial-scale=1',
+    metaContentMore: '',
+    metaName: 'viewport',
+}];
+
 /**
  * Exports React Helmet related  Strings
  *
@@ -6,12 +19,7 @@
 
 export const HELMET_STRINGS = {
     CANON_LINK: 'http://mysite.com/example',
-    CHARSET: 'utf-8',
-    META_DESC: 'description',
-    META_DESC_CONTENT: 'We remain commited to helping you worry less about your laundry. ',
-    META_DESC_CONTENT_2: 'Login to continue your stress-free laundry-happy life.',
-    META_VIEWPORT: 'viewport',
-    META_VIEWPORT_CONTENT: 'width=device-width, initial-scale=1',
+    META_TAGS,
     PAGE_TITLE: 'Sign In',
     TITLE_TEMPLATE: '%s - CleanIT',
     TITLE_TEMPLATE_DEFAULT_TITLE: 'CleanIT',

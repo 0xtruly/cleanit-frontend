@@ -4,8 +4,13 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
 const {
-    LOGIN_REQUEST, LOGIN_FAILURE, LOGOUT_FAILURE, LOGOUT_REQUEST,
-    LOGOUT_SUCCESS, VERIFY_REQUEST, VERIFY_SUCCESS,
+    LOGIN_REQUEST,
+    LOGIN_FAILURE,
+    LOGOUT_FAILURE,
+    LOGOUT_REQUEST,
+    LOGOUT_SUCCESS,
+    VERIFY_REQUEST,
+    VERIFY_SUCCESS,
 } = actionTypes;
 
 /**
