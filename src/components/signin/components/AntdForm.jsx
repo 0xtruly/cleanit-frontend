@@ -12,6 +12,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FORM_INPUTS, BUTTON_TEXT } from '../constants';
 import { LOGIN_REQUEST, INPUT_LISTEN } from '../actionTypes';
 
+/**
+ * Renders the Input fields.
+ * @function
+ *
+ * @param {*} item - item constant containing input strings and data
+ * @param {*} dispatch - useDispatch from react-redux.
+ */
 function input(item, dispatch) {
     const { key } = item;
     const icon = <Icon type={item.iconType} style={{ color: item.iconColor }} />;
@@ -51,6 +58,11 @@ function formItem(dispatch, handleSubmit) {
     );
 }
 
+/**
+ * Renders the entire form view component
+ *
+ * @function
+ */
 function SignInForm() {
     // const [user, setUser] = useState({ email: '', userpassword: '' });
     const dispatch = useDispatch();
