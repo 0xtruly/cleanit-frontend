@@ -2,8 +2,15 @@
 import * as actionTypes from './actionTypes';
 // Destructuring actionTYpes
 const {
-    INPUT_LISTEN, LOGIN_REQUEST, LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_FAILURE, LOGOUT_REQUEST,
-    LOGOUT_SUCCESS, VERIFY_REQUEST, VERIFY_SUCCESS,
+    INPUT_LISTEN,
+    LOGIN_REQUEST,
+    LOGIN_FAILURE,
+    LOGIN_SUCCESS,
+    LOGOUT_FAILURE,
+    LOGOUT_REQUEST,
+    LOGOUT_SUCCESS,
+    VERIFY_REQUEST,
+    VERIFY_SUCCESS,
 } = actionTypes;
 
 const initialState = {
