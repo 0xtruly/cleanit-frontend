@@ -3,17 +3,17 @@
  *
  * @constant
  */
-const META_TAGS = [{
-    charset: 'utf-8',
-}, {
-    metaContent: 'We remain commited to helping you worry less about your laundry. ',
-    metaContentMore: 'Login to continue your stress-free laundry-happy life.',
-    metaName: 'description',
-}, {
-    metaContent: 'width=device-width, initial-scale=1',
-    metaContentMore: '',
-    metaName: 'viewport',
-}];
+const contentString1 = 'We remain commited to helping you worry less about your laundry. ';
+const contentString2 = 'Login to continue your stress-free laundry-happy life.';
+const META_TAGS = [
+    {
+        content: `${contentString1}${contentString2}`,
+        name: 'description',
+    },
+    {
+        content: 'width=device-width, initial-scale=1',
+        name: 'viewport',
+    }];
 
 /**
  * Exports React Helmet related  Strings
@@ -52,16 +52,16 @@ export const FORM_INPUTS = [{
     iconColor: 'rgba(0,0,0,.25)',
     iconType: 'mail',
     inputType: 'email',
-    message: 'Please input your email address!',
+    key: 'email',
     name: 'userEmail',
     placeholder: 'Email address',
-    required: true,
 }, {
     iconColor: 'rgba(0,0,0,.25)',
     iconType: 'lock',
     inputType: 'password',
-    message: 'Please input your password',
+    key: 'password',
     name: 'userPassword',
     placeholder: 'Password',
-    required: true,
 }];
+
+export const BUTTON_TEXT = 'Sign In';

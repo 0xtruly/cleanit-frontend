@@ -26,9 +26,9 @@ export const requestLogin = () => ({ type: LOGIN_REQUEST });
  * @constant
  * @param {Object} User - The user object received from firebase on login.
  */
-export const receiveLogin = async user => {
+export const receiveLogin = async payload => {
     const fbfunction = process.env.REACT_APP_USER_AUTH_API;
-    const userInfo = { userAuth: user, userType: 'user' };
+    const userInfo = { userAuth: payload, userType: 'user' };
     const config = { headers: { 'Content-Type': 'application/json' } };
     const body = JSON.stringify(userInfo);
     const res = await axios.post(fbfunction, body, config);

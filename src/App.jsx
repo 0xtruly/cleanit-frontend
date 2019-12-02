@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import AOS from 'aos';
+import { Provider } from 'react-redux';
 import Homepage from './components/homepage/components';
 import Navbar from './components/navbar/components';
 import SignIn from './components/signin/components';
 import Signup from './components/signup/components';
+import store from './store';
 
 /**
  * Default AppJS file.
@@ -34,14 +36,16 @@ class App extends Component {
 
     render() {
         return (
-            <Router>
-                <Navbar />
-                <Switch>
-                    <Route path="/" exact component={Homepage} />
-                    <Route path="/sign-up" exact component={Signup} />
-                    <Route path="/sign-in" exact component={SignIn} />
-                </Switch>
-            </Router>
+            <Provider store={store}>
+                <Router>
+                    <Navbar />
+                    <Switch>
+                        <Route path="/" exact component={Homepage} />
+                        <Route path="/sign-up" exact component={Signup} />
+                        <Route path="/sign-in" exact component={SignIn} />
+                    </Switch>
+                </Router>
+            </Provider>
         );
     }
 }

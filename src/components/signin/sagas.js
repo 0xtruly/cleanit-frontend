@@ -4,7 +4,7 @@ import * as actions from './actions';
 // eslint-disable-next-line import/order
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import loginToFirebase from '../../firebase';
+import { loginToFirebase } from '../../firebase';
 
 // Destructuring actionTYpes
 const {
@@ -23,10 +23,11 @@ const {
  * @param {string} email - Email inputed by the user
  * @param {string} password - Password inputed by the user
  */
-function* loginUser(email, password) {
+function* loginUser({ payload }) {
     try {
-        const user = yield call(loginToFirebase.auth().signInWithEmailAndPassword(email, password));
-        const userDetails = yield put(receiveLogin(user));
+        const user = yield (loginToFirebase.auth()
+            .signInWithEmailAndPassword(payload.email, payload.password));
+        const userDetails = yield receiveLogin(user);
         yield put(LOGIN_SUCCESS, userDetails);
     } catch (error) {
         yield put(loginError(error));
