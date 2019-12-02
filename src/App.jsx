@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-
 import AOS from 'aos';
 import Homepage from './components/homepage/components';
 import Navbar from './components/navbar/components';
