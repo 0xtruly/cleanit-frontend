@@ -11,7 +11,6 @@ const api = REACT_APP_USER_SIGNUP_API;
 
 export const registerWithEmail = async payload => {
     const authApi = api;
-    // return console.log(authApi)
     const userInfo = { userAuth: payload, userType: 'user' };
     const config = { headers: { 'Content-Type': 'application/json' } };
     const body = JSON.stringify(userInfo);

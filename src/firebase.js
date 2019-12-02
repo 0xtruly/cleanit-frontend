@@ -26,3 +26,4 @@ export const signUpWithEmail = (email, password) => {
 };
 
 export default firebase;
+
