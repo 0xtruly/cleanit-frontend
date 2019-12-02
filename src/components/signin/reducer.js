@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import actionTypes from './actionTypes';
+import { actionTypes } from './actionTypes';
 // Destructuring actionTYpes
 const {
     INPUT_LISTEN,

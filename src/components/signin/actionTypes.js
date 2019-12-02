@@ -9,5 +9,3 @@ export const actionTypes = {
     VERIFY_REQUEST: 'VERIFY_REQUEST',
     VERIFY_SUCCESS: 'VERIFY_SUCCESS',
 };
-
-export default actionTypes;
