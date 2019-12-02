@@ -10,7 +10,9 @@ import PropTypes from 'prop-types';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { FORM_INPUTS, BUTTON_TEXT } from '../constants';
-import { LOGIN_REQUEST, INPUT_LISTEN } from '../actionTypes';
+import actionTypes from '../actionTypes';
+
+const { LOGIN_REQUEST, INPUT_LISTEN } = actionTypes;
 
 /**
  * Renders the Input fields.
