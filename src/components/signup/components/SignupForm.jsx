@@ -10,14 +10,16 @@ const { JOIN, WELCOME } = STRINGS;
  * for the form
 */
 
-const SignupForm = () => (
-    <div className="formContainer" data-test="formContainer">
-        <Card className="formCard">
-            <h3>{WELCOME}</h3>
-            <p>{JOIN}</p>
-            <FormCard />
-        </Card>
-        <SocialCard />
-    </div>
-);
+function SignupForm() {
+    return (
+        <div className="formContainer" data-test="formContainer">
+            <Card className="formCard">
+                <h3>{WELCOME}</h3>
+                <p>{JOIN}</p>
+                <FormCard />
+            </Card>
+            <SocialCard />
+        </div>
+    );
+}
 export default SignupForm;

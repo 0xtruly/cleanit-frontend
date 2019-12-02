@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AOS from 'aos';
+import { Provider } from 'react-redux';
 import Homepage from './components/homepage/components';
 import Navbar from './components/navbar/components';
 import Signup from './components/signup/components';
+import store from './store';
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
@@ -31,13 +33,15 @@ class App extends Component {
 
     render() {
         return (
-            <Router>
-                <Navbar />
-                <Switch>
-                    <Route path="/" exact component={Homepage} />
-                    <Route path="/sign-up" exact component={Signup} />
-                </Switch>
-            </Router>
+            <Provider store={store}>
+                <Router>
+                    <Navbar />
+                    <Switch>
+                        <Route path="/" exact component={Homepage} />
+                        <Route path="/sign-up" exact component={Signup} />
+                    </Switch>
+                </Router>
+            </Provider>
         );
     }
 }
