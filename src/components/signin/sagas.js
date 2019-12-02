@@ -25,10 +25,10 @@ const {
  */
 function* loginUser({ payload }) {
     try {
-        const user = yield (loginToFirebase.auth()
+        const { user } = yield (loginToFirebase.auth()
             .signInWithEmailAndPassword(payload.email, payload.password));
         const userDetails = yield receiveLogin(user);
-        yield put(LOGIN_SUCCESS, userDetails);
+        yield put({ payload: userDetails, type: LOGIN_SUCCESS });
     } catch (error) {
         yield put(loginError(error));
     }

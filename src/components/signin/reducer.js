@@ -18,6 +18,7 @@ const initialState = {
     isAuthenticated: false,
     isLoggingIn: false,
     isLoggingOut: false,
+    isVerified: false,
     isVerifying: false,
     loginError: '',
     logoutError: '',
@@ -40,7 +41,12 @@ export default (
         };
     case LOGIN_SUCCESS:
         return {
-            ...state, isAuthenticated: true, isLoggingIn: false, user: action.payload,
+            ...state,
+            email: '',
+            isAuthenticated: true,
+            isLoggingIn: false,
+            password: '',
+            user: action.payload,
         };
     case LOGIN_FAILURE:
         return {
@@ -64,7 +70,7 @@ export default (
         };
     case VERIFY_SUCCESS:
         return {
-            ...state, isVerifying: false,
+            ...state, isVerified: true, isVerifying: false,
         };
     default:
         return state;

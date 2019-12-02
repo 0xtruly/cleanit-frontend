@@ -24,7 +24,7 @@ function input(item, dispatch) {
     const icon = <Icon type={item.iconType} style={{ color: item.iconColor }} />;
     return (
         <Input
-            onChange={e => dispatch({
+            onBlur={e => dispatch({
                 payload: { key, value: e.target.value },
                 type: INPUT_LISTEN,
             })}
