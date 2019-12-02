@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import AOS from 'aos';
 import { Provider } from 'react-redux';
-import Homepage from './components/homepage/components';
-import Navbar from './components/navbar/components';
-import SignIn from './components/signin/components';
-import Signup from './components/signup/components';
+import Homepage from './components/homepage';
+import Navbar from './components/navbar';
+import SignIn from './components/signin';
+import Signup from './components/signup';
 import store from './store';
 
 /**
