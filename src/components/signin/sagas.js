@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { actionTypes } from './actionTypes';
 import * as actions from './actions';
 
@@ -13,8 +14,9 @@ const {
 
 // Destructuring Actions
 const {
-    loginError, receiveLogin, receiveLogout, logoutError, verifySuccess,
+    loginError, receiveLogout, logoutError, verifySuccess,
 } = actions;
+
 /**
  * This performs the login request using sagas
  *
@@ -24,11 +26,18 @@ const {
  * @param {string} password - Password inputed by the user
  */
 function* loginUser({ payload }) {
+    const LOGIN_API_URL = process.env.REACT_APP_USER_AUTH_API;
     try {
         const { user } = yield (loginToFirebase.auth()
             .signInWithEmailAndPassword(payload.email, payload.password));
-        const userDetails = yield receiveLogin(user);
-        yield put({ payload: userDetails, type: LOGIN_SUCCESS });
+        const userInfo = { userAuth: user, userType: 'user' };
+        const config = { headers: { 'Content-Type': 'application/json' } };
+        const body = JSON.stringify(userInfo);
+        const response = yield axios.post(LOGIN_API_URL, body, config);
+        if (response.status === 200) {
+            const { data: { info } } = response.data;
+            yield put({ payload: info, type: LOGIN_SUCCESS });
+        } else yield put(loginError(response.status));
     } catch (error) {
         yield put(loginError(error));
     }
@@ -57,7 +66,7 @@ function* verifyUserAuth() {
     try {
         const user = yield call(loginToFirebase.auth().onAuthStateChanged());
         if (user !== null) {
-            yield put(receiveLogin(user));
+            yield put({ payload: user, type: LOGIN_SUCCESS });
         }
         yield put(verifySuccess());
     } catch (error) {

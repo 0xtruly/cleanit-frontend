@@ -8,6 +8,13 @@ import SignIn from './components/signin';
 import Signup from './components/signup';
 import store from './store';
 
+// Defining App routes
+const routes = [
+    { component: Homepage, exact: true, path: '/' },
+    { component: Signup, path: '/sign-up' },
+    { component: SignIn, path: '/sign-in' },
+];
+
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
@@ -39,9 +46,14 @@ class App extends Component {
                 <Router>
                     <Navbar />
                     <Switch>
-                        <Route path="/" exact component={Homepage} />
-                        <Route path="/sign-up" exact component={Signup} />
-                        <Route path="/sign-in" exact component={SignIn} />
+                        {routes.map(route => (
+                            <Route
+                                key={route.path}
+                                path={route.path}
+                                exact={route.exact}
+                                component={route.component}
+                            />
+                        ))}
                     </Switch>
                 </Router>
             </Provider>
