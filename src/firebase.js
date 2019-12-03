@@ -8,7 +8,7 @@ const config = {
     databaseURL: process.env.REACT_APP_FIREBASE_DATABASEURL,
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+    projectId: 'cleanit-7147d',
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
 };
 
