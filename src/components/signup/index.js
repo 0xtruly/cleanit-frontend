@@ -1,8 +1,8 @@
 import reducers from './reducers';
-import * as components from './components';
 import * as actions from './actions';
+import Signup from './components';
 import signupSaga from './sagas';
 
 export {
-    actions, components, reducers, signupSaga
+    actions, Signup, reducers, signupSaga
 };

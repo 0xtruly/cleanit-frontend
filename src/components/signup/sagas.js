@@ -1,15 +1,15 @@
 import { put, takeEvery } from 'redux-saga/effects';
-import * as actions from './actions';
+import axios from 'axios';
 import actionTypes from './actionTypes';
 import { signUpWithEmail } from '../../firebase';
 
 const {
-    REGISTER_WITH_EMAIL, REGISTRATION_ERROR, REGISTRATION_SUCCESS,
+    REGISTER_WITH_EMAIL,
+    REGISTRATION_ERROR,
+    REGISTRATION_SUCCESS,
 } = actionTypes;
-
-const {
-    registerWithEmail,
-} = actions;
+const { REACT_APP_USER_SIGNUP_API } = process.env;
+const api = REACT_APP_USER_SIGNUP_API;
 
 /**
  *
@@ -19,12 +19,19 @@ const {
  */
 
 function* userSignUpEmail({ payload }) {
+    const { email, password } = payload;
     try {
-        const { user } = yield signUpWithEmail(payload.email, payload.password);
-        const userDetails = yield registerWithEmail(user);
-        yield put({ payload: userDetails, type: REGISTRATION_SUCCESS });
+        const { user } = yield signUpWithEmail(email, password);
+        const userInfo = { userAuth: user, userType: 'user' };
+        const config = { headers: { 'Content-Type': 'application/json' } };
+        const body = JSON.stringify(userInfo);
+        const request = yield axios.post(api, body, config);
+        if (request.status === 200) {
+            const { status } = request.data;
+            yield put({ payload: status, type: REGISTRATION_SUCCESS });
+        }
     } catch (error) {
-        yield put({ type: REGISTRATION_ERROR });
+        yield put({ payload: error, type: REGISTRATION_ERROR });
     }
 }
 
