@@ -1,9 +1,15 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
+// Destructuring actionTypes
 const {
-    LOGIN_REQUEST, LOGIN_FAILURE, LOGOUT_FAILURE, LOGOUT_REQUEST,
-    LOGOUT_SUCCESS, VERIFY_REQUEST, VERIFY_SUCCESS,
+    LOGIN_REQUEST,
+    LOGIN_FAILURE,
+    LOGOUT_FAILURE,
+    LOGOUT_REQUEST,
+    LOGOUT_SUCCESS,
+    VERIFY_REQUEST,
+    VERIFY_SUCCESS,
 } = actionTypes;
 
 /**
