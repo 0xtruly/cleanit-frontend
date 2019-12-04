@@ -16,17 +16,22 @@ const firebaseConfig = {
 };
 
 export const loginToFirebase = firebase.initializeApp(firebaseConfig);
-const baseDb = loginToFirebase.firestore();
-export const db = baseDb;
 
+/**
+ * Initializing the firebaseui
+ *
+ * @constant
+ */
 const firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
 
+/**
+ * firebaseUI config rules
+ *
+ * @constant
+ */
 const uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult() {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
             return true;
         },
     },
@@ -57,5 +62,4 @@ const uiConfig = {
     ],
     signInSuccessUrl: 'http://localhost:3000/dashboard',
 };
-export const startFirebase = firebaseUI.start('#social-card-auth-container', uiConfig);
-
+export const startFirebaseUI = firebaseUI.start('#social-card-auth-container', uiConfig);
