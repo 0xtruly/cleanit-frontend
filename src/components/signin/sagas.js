@@ -1,10 +1,9 @@
-import * as actionTypes from './actionTypes';
+import axios from 'axios';
+import { put, takeEvery } from 'redux-saga/effects';
+import { actionTypes } from './actionTypes';
 import * as actions from './actions';
 
-// eslint-disable-next-line import/order
-import { call, put, takeEvery } from 'redux-saga/effects';
-
-import loginToFirebase from '../../firebase';
+import { loginToFirebase } from '../../firebase';
 
 // Destructuring actionTYpes
 const {
@@ -13,8 +12,9 @@ const {
 
 // Destructuring Actions
 const {
-    loginError, receiveLogin, receiveLogout, logoutError, verifySuccess,
+    loginError, receiveLogout, logoutError, verifySuccess,
 } = actions;
+
 /**
  * This performs the login request using sagas
  *
@@ -23,11 +23,19 @@ const {
  * @param {string} email - Email inputed by the user
  * @param {string} password - Password inputed by the user
  */
-function* loginUser(email, password) {
+function* loginUser({ payload }) {
+    const LOGIN_API_URL = process.env.REACT_APP_USER_AUTH_API;
     try {
-        const user = yield call(loginToFirebase.auth().signInWithEmailAndPassword(email, password));
-        const userDetails = yield put(receiveLogin(user));
-        yield put(LOGIN_SUCCESS, userDetails);
+        const { user } = yield (loginToFirebase.auth()
+            .signInWithEmailAndPassword(payload.email, payload.password));
+        const userInfo = { userAuth: user, userType: 'user' };
+        const config = { headers: { 'Content-Type': 'application/json' } };
+        const body = JSON.stringify(userInfo);
+        const response = yield axios.post(LOGIN_API_URL, body, config);
+        if (response.status === 200) {
+            const { data: { info } } = response.data;
+            yield put({ payload: info, type: LOGIN_SUCCESS });
+        } else yield put(loginError(response.status));
     } catch (error) {
         yield put(loginError(error));
     }
@@ -40,7 +48,7 @@ function* loginUser(email, password) {
  */
 function* logoutUser() {
     try {
-        const data = yield call(loginToFirebase.auth().signOut());
+        const data = yield (loginToFirebase.auth().signOut());
         yield put(receiveLogout(data));
     } catch (error) {
         yield put(logoutError(error));
@@ -54,9 +62,9 @@ function* logoutUser() {
  */
 function* verifyUserAuth() {
     try {
-        const user = yield call(loginToFirebase.auth().onAuthStateChanged());
+        const { user } = yield (loginToFirebase.auth().onAuthStateChanged());
         if (user !== null) {
-            yield put(receiveLogin(user));
+            yield put({ payload: user, type: LOGIN_SUCCESS });
         }
         yield put(verifySuccess());
     } catch (error) {

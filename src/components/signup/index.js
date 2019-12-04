@@ -1,8 +1,9 @@
 import reducers from './reducers';
-import * as components from './components';
 import * as actions from './actions';
+import Signup from './components';
 
 export {
-    actions, components, reducers
+    actions, reducers
 };
 
+export default Signup;

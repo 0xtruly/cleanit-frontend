@@ -1,5 +1,4 @@
-import axios from 'axios';
-import * as actionTypes from './actionTypes';
+import { actionTypes } from './actionTypes';
 
 // Destructuring actionTypes
 const {
@@ -18,21 +17,6 @@ const {
  * @constant
  */
 export const requestLogin = () => ({ type: LOGIN_REQUEST });
-
-/**
- * Receiving User Object from Firebase on successful login
- *
- * @constant
- * @param {Object} User - The user object received from firebase on login.
- */
-export const receiveLogin = async user => {
-    const fbfunction = process.env.REACT_APP_USER_AUTH_API;
-    const userInfo = { userAuth: user, userType: 'user' };
-    const config = { headers: { 'Content-Type': 'application/json' } };
-    const body = JSON.stringify(userInfo);
-    const res = await axios.post(fbfunction, body, config);
-    return res.data.data.info;
-};
 
 /**
  * This describes a case where there is a login failure
