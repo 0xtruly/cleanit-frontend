@@ -5,3 +5,7 @@ node_js:
 script:
   - npm run lint
   - npm test
+  - npm run build
+after_success:
+  - firebase use --token 'cleanit-7147d'
+  - firebase --non-interactive --token 'AIzaSyA4e8s9kuZvJBMAJVX4VUdxABoVwqwAu8A'
