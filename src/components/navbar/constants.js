@@ -25,8 +25,8 @@ const menuItems = [{
     className: '',
     key: 'about',
     linkClassName: '',
-    linkTo: '/about-us',
-    text: 'About Us',
+    linkTo: '/about',
+    text: 'About',
 }, {
     className: 'button-link',
     key: 'signUp',

@@ -1,4 +1,6 @@
 import firebase from 'firebase/app';
+import * as firebaseui from 'firebaseui';
+import 'firebaseui/dist/firebaseui.css';
 import 'firebase/auth';
 import 'firebase/firestore';
 
@@ -16,3 +18,44 @@ const firebaseConfig = {
 export const loginToFirebase = firebase.initializeApp(firebaseConfig);
 const baseDb = loginToFirebase.firestore();
 export const db = baseDb;
+
+const firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
+
+const uiConfig = {
+    callbacks: {
+        signInSuccessWithAuthResult() {
+            // User successfully signed in.
+            // Return type determines whether we continue the redirect automatically
+            // or whether we leave that to developer to handle.
+            return true;
+        },
+    },
+    signInOptions: [
+        {
+            customParameters: {
+                // Forces account selection even when one account
+                // is available.
+                prompt: 'select_account',
+            },
+            provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            scopes: [
+                'email',
+            ],
+        },
+        {
+            customParameters: {
+                // Forces password re-entry.
+                auth_type: 'reauthenticate',
+            },
+            provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            scopes: [
+                'public_profile',
+                'email',
+            ],
+        },
+        firebase.auth.TwitterAuthProvider.PROVIDER_ID, // Twitter does not support scopes.
+    ],
+    signInSuccessUrl: 'http://localhost:3000/dashboard',
+};
+export const startFirebase = firebaseUI.start('#social-card-auth-container', uiConfig);
+
