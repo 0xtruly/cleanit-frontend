@@ -2,13 +2,15 @@ import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import * as actions from './actions';
-import { signUpWithEmail } from '../../firebase';
+import * as firebase from '../../firebase';
 
 const { REGISTER_WITH_EMAIL } = actionTypes;
 
 const { registrationError, registrationSuccess } = actions;
 const { REACT_APP_USER_SIGNUP_API } = process.env;
 const api = REACT_APP_USER_SIGNUP_API;
+
+const { signUpWithEmail } = firebase;
 
 /**
  *
