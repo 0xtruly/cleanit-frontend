@@ -3,26 +3,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button, Input } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { STRINGS, formInputs } from '../constants';
-import actionTypes from '../actionTypes';
+import * as actions from '../actions';
 
 const { ALREADY, CREATE_ACCOUNT, SIGNIN } = STRINGS;
-const { GET_INPUT, REGISTER_WITH_EMAIL } = actionTypes;
+const { getInput, registerWithEmail } = actions;
 
 /**
  *
- * @param {*} key input value identified by a key
- * @param {*} dispatch an action type GET_INPUT
+ * @param {string} key input value identified by a key
+ * @param {function} dispatch an action type GET_INPUT
  * and pass the value from the key press event
  * to payload
- * @param {*} placeholder for each input field
- * @param {*} inputType signifies the type for each input field
+ * @param {string} placeholder for each input field
+ * @param {string} inputType signifies the type for each input field
  */
 
-function InputField(key, dispatch, placeholder, inputType) {
+function InputField(key, placeholder, inputType) {
+    const dispatch = useDispatch();
     return (
         <Input
             key={key}
-            onChange={e => dispatch({ payload: { key, value: e.target.value }, type: GET_INPUT })}
+            onChange={e => dispatch(getInput({ key, value: e.target.value }))}
             placeholder={placeholder}
             type={inputType}
         />
@@ -31,21 +32,19 @@ function InputField(key, dispatch, placeholder, inputType) {
 
 /**
  *
- * @param {*} dispatch an action type GET_INPUT
+ * @param {function} dispatch an action type GET_INPUT
  * and pass the value from the key press event
  * to payload
  * The FormInput component is passed unto
  * FormItemInput
  */
 
-function FormItemInput(dispatch) {
+function FormItemInput() {
     return (
         <Form.Item>
             {formInputs.map(input => {
                 const { inputType, key, placeholder } = input;
-                return (
-                    InputField(key, dispatch, placeholder, inputType)
-                );
+                return InputField(key, placeholder, inputType);
             })}
         </Form.Item>
     );
@@ -53,17 +52,23 @@ function FormItemInput(dispatch) {
 
 /**
  *
- * @param {*} dispatch an action type REGISTER_WITH_EMAIL
- * @param {*} info is a variable assigned to value
+ * @param {function} dispatch an action type REGISTER_WITH_EMAIL
+ * @param {object} info is a variable assigned to value
  * of email, name and password in state
  */
 
-function FormButton(dispatch, info) {
+function FormButton() {
+    const dispatch = useDispatch();
+    const data = useSelector(state => state);
+    const {
+        signup: { name, email, password },
+    } = data;
+    const info = { email, name, password };
     return (
         <Form.Item>
             <Button
                 className="button-p"
-                onClick={() => dispatch({ payload: info, type: REGISTER_WITH_EMAIL })}
+                onClick={() => dispatch(registerWithEmail(info))}
                 type="primary"
             >
                 {CREATE_ACCOUNT}
@@ -76,14 +81,10 @@ function FormButton(dispatch, info) {
  *This is the main FormCard function
  */
 export function FormCard() {
-    const dispatch = useDispatch();
-    const data = useSelector(state => state);
-    const { signup: { name, email, password } } = data;
-    const info = { email, name, password };
     return (
         <Form className="sign-form" layout="horizontal">
-            {FormItemInput(dispatch)}
-            {FormButton(dispatch, info)}
+            {FormItemInput()}
+            {FormButton()}
             <span className="signIn">
                 {ALREADY}
                 <NavLink to="/">{SIGNIN}</NavLink>

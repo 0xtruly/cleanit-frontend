@@ -8,12 +8,14 @@ const initalState = {
     name: '',
     password: '',
     success: null,
+    userObj: null,
 };
 
 const {
     GET_INPUT,
     REGISTER_WITH_EMAIL,
-    REGISTRATION_ERROR, REGISTRATION_SUCCESS,
+    REGISTRATION_ERROR,
+    REGISTRATION_SUCCESS,
 } = actionTypes;
 
 export default (state = initalState, { type, payload }) => {

@@ -21,6 +21,13 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signUpWithGoogle = () => auth.signInWithPopup(provider);
 
+/**
+ *
+ * @param {string} email user email
+ * @param {string} password user password
+ * creates a user account with provided email
+ * and password.
+ */
 export const signUpWithEmail = async (email, password) => {
     const req = await auth.createUserWithEmailAndPassword(email, password);
     return req;

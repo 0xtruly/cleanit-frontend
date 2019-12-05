@@ -1,19 +1,18 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import actionTypes from './actionTypes';
+import * as actions from './actions';
 import { signUpWithEmail } from '../../firebase';
 
-const {
-    REGISTER_WITH_EMAIL,
-    REGISTRATION_ERROR,
-    REGISTRATION_SUCCESS,
-} = actionTypes;
+const { REGISTER_WITH_EMAIL } = actionTypes;
+
+const { registrationError, registrationSuccess } = actions;
 const { REACT_APP_USER_SIGNUP_API } = process.env;
 const api = REACT_APP_USER_SIGNUP_API;
 
 /**
  *
- * @param {*} payload is destructured from data
+ * @param {object} payload is destructured from data
  *the generator function userSignUpEmail is fired
  when ever the action REGISTER_WITH_EMAIL is dispatched
  */
@@ -28,10 +27,11 @@ function* userSignUpEmail({ payload }) {
         const request = yield axios.post(api, body, config);
         if (request.status === 200) {
             const { status } = request.data;
-            yield put({ payload: status, type: REGISTRATION_SUCCESS });
+            yield put(registrationSuccess(status));
         }
     } catch (error) {
-        yield put({ payload: error, type: REGISTRATION_ERROR });
+        const { message } = error;
+        yield put(registrationError(`${message} you might need to try again.`));
     }
 }
 
