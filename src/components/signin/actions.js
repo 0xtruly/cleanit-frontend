@@ -16,7 +16,7 @@ const {
  *
  * @constant
  */
-export const requestLogin = user => ({ type: LOGIN_REQUEST, user });
+export const requestLogin = () => ({ type: LOGIN_REQUEST });
 
 /**
  * This describes a case where there is a login failure
