@@ -33,11 +33,7 @@ export const MAIN_CONTENT = {
     HERO_TITLE: 'Let us help you worry-less about your laundry',
     LINKS: [{
         link_class: 'btn-primary -large -mr-2',
-        link_text: 'Sign Up',
+        link_text: 'Get Started Now',
         link_to: '/sign-up',
-    }, {
-        link_class: 'btn-primary -alternate -large',
-        link_text: 'Login',
-        link_to: '/login',
     }],
 };

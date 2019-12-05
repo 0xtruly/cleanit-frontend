@@ -46,6 +46,9 @@ export const LOGIN_STRINGS = {
     LOGIN_TITLE: 'Welcome back!',
     LOGIN_TITLE_SUBTEXT: 'Please sign in to continue',
     REMEMBER_ME: 'Remember me',
+    SIGN_UP_LINK_TEXT: 'Sign Up here',
+    SIGN_UP_TEXT: "Don't have an account yet? ",
+    SIGN_UP_URL: '/sign-up',
     SOCIAL_TEXT: 'You can also sign in using social media to gain quick access',
 };
 
