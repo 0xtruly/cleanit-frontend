@@ -6,7 +6,7 @@ import './App.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-require('dotenv').config();
+require('dotenv').config({ path: '.env' });
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
