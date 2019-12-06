@@ -5,7 +5,6 @@ import * as actions from './actions';
 
 import { loginToFirebase } from '../../firebase';
 
-
 // Destructuring actionTYpes
 const {
     LOGIN_REQUEST, LOGIN_SUCCESS, VERIFY_REQUEST, LOGOUT_REQUEST,

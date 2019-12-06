@@ -1,15 +1,5 @@
+import { initalState } from './initialState';
 import actionTypes from './actionTypes';
-
-const initalState = {
-    email: '',
-    error: null,
-    isRegistered: false,
-    isRegistering: false,
-    name: '',
-    password: '',
-    success: null,
-    userObj: null,
-};
 
 const {
     GET_INPUT,
@@ -26,13 +16,12 @@ export default (state = initalState, { type, payload }) => {
     }
     case REGISTER_WITH_EMAIL:
         return { ...state, isRegistering: true };
-
     case REGISTRATION_SUCCESS:
-        return { ...state, email: '', isRegistered: true, isRegistering: false, name: '', password: '', success: payload };
-
+        return {
+            ...state, isRegistered: true, isRegistering: false, success: payload,
+        };
     case REGISTRATION_ERROR:
         return { ...state, error: payload, isRegistering: false };
-
     default:
         return state;
     }

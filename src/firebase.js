@@ -12,12 +12,11 @@ const firebaseConfig = {
     storageBucket: process.env.REACT_APP_FIREBASE_STR_BUCKET,
 };
 
-export const firebaseApp = firebase.initializeApp(firebaseConfig);
 export const loginToFirebase = firebase.initializeApp(firebaseConfig);
 const baseDb = loginToFirebase.firestore();
 export const db = baseDb;
 
-export const auth = firebaseApp.auth();
+export const auth = loginToFirebase.auth();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });

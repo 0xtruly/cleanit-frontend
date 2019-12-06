@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    Form, Button, Input, message 
+    Form, Button, Input, message
 } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { STRINGS, formInputs } from '../constants';
@@ -19,7 +19,6 @@ const { getInput, registerWithEmail } = actions;
  * @param {string} placeholder for each input field
  * @param {string} inputType signifies the type for each input field
  */
-
 
 function InputField(key, placeholder, inputType) {
     const dispatch = useDispatch();
@@ -43,7 +42,6 @@ function InputField(key, placeholder, inputType) {
  */
 
 function FormItemInput() {
-
     return (
         <Form.Item>
             {formInputs.map(input => {
