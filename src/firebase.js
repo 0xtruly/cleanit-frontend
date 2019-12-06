@@ -1,6 +1,8 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
+import 'firebase/auth';
+import 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -61,3 +63,7 @@ const uiConfig = {
     signInSuccessUrl: 'http://localhost:3000/dashboard',
 };
 export const startFirebaseUI = firebaseUI.start('#social-card-auth-container', uiConfig);
+
+firebase.auth().setPersistence(process.env.NODE_ENV === 'test'
+    ? firebase.auth.Auth.Persistence.NONE
+    : firebase.auth.Auth.Persistence.LOCAL);
