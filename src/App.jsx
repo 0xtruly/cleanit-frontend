@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import AOS from 'aos';
 import { Provider } from 'react-redux';
-import Homepage from './components/homepage/components';
-import Navbar from './components/navbar/components';
-import SignIn from './components/signin/components';
-import Signup from './components/signup/components';
+import Homepage from './components/homepage';
+import Navbar from './components/navbar';
+import SignIn from './components/signin';
+import Signup from './components/signup';
 import store from './store';
+
+// Defining App routes
+const routes = [
+    { component: Homepage, exact: true, path: '/' },
+    { component: Signup, path: '/sign-up' },
+    { component: SignIn, path: '/sign-in' },
+];
 
 /**
  * Default AppJS file.
@@ -39,9 +46,14 @@ class App extends Component {
                 <Router>
                     <Navbar />
                     <Switch>
-                        <Route path="/" exact component={Homepage} />
-                        <Route path="/sign-up" exact component={Signup} />
-                        <Route path="/sign-in" exact component={SignIn} />
+                        {routes.map(route => (
+                            <Route
+                                key={route.path}
+                                path={route.path}
+                                exact={route.exact}
+                                component={route.component}
+                            />
+                        ))}
                     </Switch>
                 </Router>
             </Provider>

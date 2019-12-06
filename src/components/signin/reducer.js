@@ -1,32 +1,52 @@
 /* eslint-disable max-lines-per-function */
-import * as actionTypes from './actionTypes';
+import { actionTypes } from './actionTypes';
 // Destructuring actionTYpes
 const {
-    LOGIN_REQUEST, LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_FAILURE, LOGOUT_REQUEST,
-    LOGOUT_SUCCESS, VERIFY_REQUEST, VERIFY_SUCCESS,
+    INPUT_LISTEN,
+    LOGIN_REQUEST,
+    LOGIN_FAILURE,
+    LOGIN_SUCCESS,
+    LOGOUT_FAILURE,
+    LOGOUT_REQUEST,
+    LOGOUT_SUCCESS,
+    VERIFY_REQUEST,
+    VERIFY_SUCCESS,
 } = actionTypes;
 
 const initialState = {
+    email: '',
     isAuthenticated: false,
     isLoggingIn: false,
     isLoggingOut: false,
+    isVerified: false,
     isVerifying: false,
     loginError: '',
     logoutError: '',
-    user: {},
+    password: '',
 };
 
 export default (
     state = initialState, action
 ) => {
     switch (action.type) {
+    case INPUT_LISTEN:
+    {
+        const { key, value } = action.payload;
+        return {
+            ...state, [key]: value,
+        }; }
     case LOGIN_REQUEST:
         return {
-            ...state, isLoggingIn: true, loginError: false,
+            ...state, isLoggingIn: true, loginError: false, user: action.payload,
         };
     case LOGIN_SUCCESS:
         return {
-            ...state, isAuthenticated: true, isLoggingIn: false, user: action.user,
+            ...state,
+            email: '',
+            isAuthenticated: true,
+            isLoggingIn: false,
+            password: '',
+            user: action.payload,
         };
     case LOGIN_FAILURE:
         return {
@@ -50,7 +70,7 @@ export default (
         };
     case VERIFY_SUCCESS:
         return {
-            ...state, isVerifying: false,
+            ...state, isVerified: true, isVerifying: false,
         };
     default:
         return state;

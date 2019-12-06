@@ -21,3 +21,34 @@
     }
   }
 }
+
+.btn-sign-in {
+  background-color: #1890FF;
+  padding: 0.5rem 1.5rem;
+  color: #ffffff !important;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  font-weight: 700;
+  display: block;
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  margin: 2rem auto;
+
+  &:hover {
+    background-color: #1182B3;
+    border-color: #1182B3 !important;
+  }
+
+  &.-alternate {
+    background-color: transparent;
+    border-color: #1890FF;
+    color: #1890FF !important;
+
+    &:hover {
+      background-color: #C5EEFF;
+    }
+  }
+}

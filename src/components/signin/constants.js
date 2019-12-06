@@ -6,7 +6,6 @@
 const contentString1 = 'We remain commited to helping you worry less about your laundry. ';
 const contentString2 = 'Login to continue your stress-free laundry-happy life.';
 const META_TAGS = [
-    { charset: 'utf-8' },
     {
         content: `${contentString1}${contentString2}`,
         name: 'description',
@@ -43,3 +42,26 @@ export const LOGIN_STRINGS = {
     PASSWORD_PLACEHOLDER: 'Password',
     REMEMBER_ME: 'Remember me',
 };
+
+/**
+ * Exports Form Input elements
+ *
+ * @constant
+ */
+export const FORM_INPUTS = [{
+    iconColor: 'rgba(0,0,0,.25)',
+    iconType: 'mail',
+    inputType: 'email',
+    key: 'email',
+    name: 'userEmail',
+    placeholder: 'Email address',
+}, {
+    iconColor: 'rgba(0,0,0,.25)',
+    iconType: 'lock',
+    inputType: 'password',
+    key: 'password',
+    name: 'userPassword',
+    placeholder: 'Password',
+}];
+
+export const BUTTON_TEXT = 'Sign In';
