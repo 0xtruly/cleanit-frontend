@@ -4,5 +4,7 @@ import Signup from './components';
 import signupSaga from './sagas';
 
 export {
-    actions, Signup, reducers, signupSaga
+    actions, reducers, signupSaga
 };
+
+export default Signup;
