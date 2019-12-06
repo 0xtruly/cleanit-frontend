@@ -32,5 +32,5 @@ function* vendorLogin({ payload }) {
 }
 
 export default function* vendorSigninSaga() {
-    yield takeEvery(SIGNIN_REQUEST, vendorLogin)
-};
+    yield takeEvery(SIGNIN_REQUEST, vendorLogin);
+}
