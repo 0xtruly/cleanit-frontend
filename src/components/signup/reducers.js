@@ -28,7 +28,7 @@ export default (state = initalState, { type, payload }) => {
         return { ...state, isRegistering: true };
 
     case REGISTRATION_SUCCESS:
-        return { ...state, isRegistered: true, success: payload };
+        return { ...state, email: '', isRegistered: true, isRegistering: false, name: '', password: '', success: payload };
 
     case REGISTRATION_ERROR:
         return { ...state, error: payload, isRegistering: false };

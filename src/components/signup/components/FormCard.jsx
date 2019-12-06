@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Button, Input } from 'antd';
+import {
+    Form, Button, Input, message 
+} from 'antd';
 import { NavLink } from 'react-router-dom';
 import { STRINGS, formInputs } from '../constants';
 import * as actions from '../actions';
@@ -17,6 +19,7 @@ const { getInput, registerWithEmail } = actions;
  * @param {string} placeholder for each input field
  * @param {string} inputType signifies the type for each input field
  */
+
 
 function InputField(key, placeholder, inputType) {
     const dispatch = useDispatch();
@@ -40,6 +43,7 @@ function InputField(key, placeholder, inputType) {
  */
 
 function FormItemInput() {
+
     return (
         <Form.Item>
             {formInputs.map(input => {
@@ -80,7 +84,8 @@ function FormButton() {
 /**
  *This is the main FormCard function
  */
-export function FormCard() {
+
+function FormComponent() {
     return (
         <Form className="sign-form" layout="horizontal">
             {FormItemInput()}
@@ -92,3 +97,22 @@ export function FormCard() {
         </Form>
     );
 }
+export function FormCard() {
+    const data = useSelector(state => state);
+    const {
+        signup: {
+            error, isRegistering, isRegistered, success,
+        },
+    } = data;
+    if (isRegistering === true) {
+        message.loading({ content: 'Request processing ' });
+    } else if (success === 'success' && isRegistered === true) {
+        message.success({ content: 'Registration was successful' });
+    } else if (error !== {} && error !== null) {
+        message.error({ content: 'An error occured, try again' });
+    }
+    return (
+        FormComponent()
+    );
+}
+

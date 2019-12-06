@@ -5,11 +5,11 @@ const config = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
     authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
-    databaseURL: process.env.REACT_APP_FIREBASE_DATABASEURL,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
-    projectId: 'cleanit-7147d',
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+    databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
+    measurementId: process.env.REACT_APP_FIREBASE_MSG_ID,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STR_BUCKET,
 };
 
 export const firebaseApp = firebase.initializeApp(config);

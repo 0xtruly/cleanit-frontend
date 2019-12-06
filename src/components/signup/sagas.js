@@ -6,9 +6,12 @@ import * as firebase from '../../firebase';
 
 const { REGISTER_WITH_EMAIL } = actionTypes;
 
-const { registrationError, registrationSuccess } = actions;
-const { REACT_APP_USER_SIGNUP_API } = process.env;
-const api = REACT_APP_USER_SIGNUP_API;
+const {
+    registrationError,
+    registrationSuccess,
+} = actions;
+const { REACT_APP_USER_AUTH_API } = process.env;
+const api = REACT_APP_USER_AUTH_API;
 
 const { signUpWithEmail } = firebase;
 
@@ -20,10 +23,10 @@ const { signUpWithEmail } = firebase;
  */
 
 function* userSignUpEmail({ payload }) {
-    const { email, password } = payload;
+    const { email, name, password } = payload;
     try {
         const { user } = yield signUpWithEmail(email, password);
-        const userInfo = { userAuth: user, userType: 'user' };
+        const userInfo = { fullName: name, userAuth: user, userType: 'user' };
         const config = { headers: { 'Content-Type': 'application/json' } };
         const body = JSON.stringify(userInfo);
         const request = yield axios.post(api, body, config);

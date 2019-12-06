@@ -9,3 +9,6 @@ script:
 after_success:
   - firebase use --token 'cleanit-7147d'
   - firebase --non-interactive --token 'AIzaSyA4e8s9kuZvJBMAJVX4VUdxABoVwqwAu8A'
+env:
+  - apiKey='AIzaSyA4e8s9kuZvJBMAJVX4VUdxABoVwqwAu8A'
+  - projectId='cleanit-7147d'

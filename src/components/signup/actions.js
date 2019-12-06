@@ -4,6 +4,7 @@ const {
     GET_INPUT,
     REGISTER_WITH_EMAIL,
     REGISTRATION_ERROR,
+    REGISTER_WITH_GOOGLE,
     REGISTRATION_SUCCESS,
 } = actionTypes;
 
@@ -25,4 +26,9 @@ export const registrationError = payload => ({
 export const getInput = payload => ({
     payload,
     type: GET_INPUT,
+});
+
+export const registerWithGoogle = payload => ({
+    payload,
+    type: REGISTER_WITH_GOOGLE,
 });

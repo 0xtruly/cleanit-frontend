@@ -8,6 +8,7 @@ export const STRINGS = {
     JOIN: 'Join as a User',
     LOGIN: 'Login using social media to gain quick access',
     LOGO: `https://firebasestorage.googleapis.com/v0/b/${logoSuffix1}?alt=${logoSuffix2}`,
+    REQUEST_PROCESSING: 'Request Processing',
     SIGNIN: 'Sign in',
     USER: 'user',
     VENDOR: 'vendor',
