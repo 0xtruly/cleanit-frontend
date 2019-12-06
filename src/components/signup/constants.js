@@ -8,8 +8,8 @@ export const STRINGS = {
     JOIN: 'Join as a User',
     LOGIN: 'Login using social media to gain quick access',
     LOGO: `https://firebasestorage.googleapis.com/v0/b/${logoSuffix1}?alt=${logoSuffix2}`,
+    REQUEST_PROCESSING: 'Request Processing',
     SIGNIN: 'Sign in',
-    SIGNUP_ENDPOINT: 'https://us-central1-cleanit-7147d.cloudfunctions.net/app/api/v1/auth/',
     USER: 'user',
     VENDOR: 'vendor',
     WELCOME: 'Welcome',
@@ -19,30 +19,40 @@ export const formInputs = [
 
     {
         className: '',
+        iconColor: 'rgba(0,0,0,.25)',
+        iconType: 'user',
         id: 'userName',
         inputType: 'text',
         key: 'name',
+        name: 'name',
         placeholder: 'Your Name',
         rules: {
             message: 'please input your name',
             required: true,
         },
+        type: 'name',
     },
 
     {
         className: '',
+        iconColor: 'rgba(0,0,0,.25)',
+        iconType: 'mail',
         id: 'email',
         inputType: 'email',
         key: 'email',
+        name: 'email',
         placeholder: 'Email Address',
         rules: {
             message: 'please input email address',
             required: true,
         },
+        type: 'email',
     },
 
     {
         className: '',
+        iconColor: 'rgba(0,0,0,.25)',
+        iconType: 'lock',
         id: 'password',
         inputType: 'password',
         key: 'password',
@@ -51,6 +61,7 @@ export const formInputs = [
             message: 'please input password',
             required: true,
         },
+        type: 'password',
     },
 ];
 

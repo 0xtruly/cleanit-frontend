@@ -5,3 +5,10 @@ node_js:
 script:
   - npm run lint
   - npm test
+  - npm run build
+after_success:
+  - firebase use --token process.env.REACT_APP_FIREBASE_PROJECT_ID
+  - firebase --non-interactive --token process.env.REACT_APP_FIREBASE_API_KEY
+env:
+  - apiKey=process.env.REACT_APP_FIREBASE_API_KEY
+  - projectId=process.env.REACT_APP_FIREBASE_PROJECT_ID

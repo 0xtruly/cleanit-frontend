@@ -1,11 +1,10 @@
-import firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import 'firebase/auth';
-import 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_ID,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
     databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
     measurementId: process.env.REACT_APP_FIREBASE_MSG_ID,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
@@ -16,3 +15,23 @@ const firebaseConfig = {
 export const loginToFirebase = firebase.initializeApp(firebaseConfig);
 const baseDb = loginToFirebase.firestore();
 export const db = baseDb;
+
+export const auth = loginToFirebase.auth();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signUpWithGoogle = () => auth.signInWithPopup(provider);
+
+/**
+ *
+ * @param {string} email user email
+ * @param {string} password user password
+ * creates a user account with provided email
+ * and password.
+ */
+export const signUpWithEmail = async (email, password) => {
+    const req = await auth.createUserWithEmailAndPassword(email, password);
+    return req;
+};
+
+export default firebase;
