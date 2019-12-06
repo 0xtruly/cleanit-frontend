@@ -29,4 +29,16 @@ export const signInSuccess = payload => ({ payload, type: SIGNIN_SUCCESS });
  * @param {string} error the error gotten from
  * a failed signin request
  */
-export const signInError = error => ({ error, type: SIGNIN_ERROR })
+export const signInError = error => ({ error, type: SIGNIN_ERROR });
+
+/**
+ * 
+ * @param {string} payload  
+ */
+export const signOutRequest = payload => ({ payload, type: SIGNOUT_REQUEST });
+
+export const signOutSuccess = payload => ({ payload, type: SIGNOUT_SUCCESS });
+
+export const verificationRequest = payload => ({ payload, type: VERIFICATION_REQUEST });
+
+export const verificationSuccess = payload => ({ payload, type: VERIFICATION_SUCCESS });
