@@ -64,8 +64,6 @@ const uiConfig = {
 };
 export const startFirebaseUI = firebaseUI.start('#social-card-auth-container', uiConfig);
 
-if (process.env.NODE_ENV === 'test') {
-    loginToFirebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
-} else {
-    loginToFirebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-}
+firebase.auth().setPersistence(process.env.NODE_ENV === 'test'
+    ? firebase.auth.Auth.Persistence.NONE
+    : firebase.auth.Auth.Persistence.LOCAL);
