@@ -18,6 +18,11 @@ const {
     VENDOR_SIGN_IN_URL,
 } = LOGIN_STRINGS;
 
+/**
+ * Renders the Link URL for a User to Sign Up newly.
+ *
+ * @constant
+ */
 const renderSignUpView = (
     <div className="sign-up-feature">
         <p>
@@ -48,6 +53,11 @@ const renderSignInViews = (
     </Row>
 );
 
+/**
+ * Renders the Link URL for a vendor to Sign In
+ *
+ * @constant
+ */
 const renderVendorSignInView = (
     <div className="sign-up-feature">
         <p>
