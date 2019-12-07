@@ -8,6 +8,7 @@ export const STRINGS = {
     JOIN: 'Join as a User',
     LOGIN: 'Login using social media to gain quick access',
     LOGO: `https://firebasestorage.googleapis.com/v0/b/${logoSuffix1}?alt=${logoSuffix2}`,
+    PASSWORD: 'Password',
     REQUEST_PROCESSING: 'Request Processing',
     SIGNIN: 'Sign in',
     USER: 'user',
@@ -30,7 +31,6 @@ export const formInputs = [
             message: 'please input your name',
             required: true,
         },
-        type: 'name',
     },
 
     {
@@ -46,7 +46,6 @@ export const formInputs = [
             message: 'please input email address',
             required: true,
         },
-        type: 'email',
     },
 
     {
@@ -56,12 +55,12 @@ export const formInputs = [
         id: 'password',
         inputType: 'password',
         key: 'password',
+        password: 'Password',
         placeholder: 'Password',
         rules: {
             message: 'please input password',
             required: true,
         },
-        type: 'password',
     },
 ];
 
