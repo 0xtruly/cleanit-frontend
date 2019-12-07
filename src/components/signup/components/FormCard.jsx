@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    Form, Button, Input, message
+    Form, Button, Input, message, Icon
 } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { STRINGS, formInputs } from '../constants';
@@ -20,13 +20,15 @@ const { getInput, registerWithEmail } = actions;
  * @param {string} inputType signifies the type for each input field
  */
 
-function InputField(key, placeholder, inputType) {
+function InputField(key, placeholder, iconColor, iconType, inputType) {
     const dispatch = useDispatch();
+    const icon = <Icon type={iconType} style={{ color: iconColor }} />;
     return (
         <Input
             key={key}
             onChange={e => dispatch(getInput({ key, value: e.target.value }))}
             placeholder={placeholder}
+            prefix={icon}
             type={inputType}
         />
     );
@@ -46,9 +48,9 @@ function FormItemInput() {
         <Form.Item>
             {formInputs.map(input => {
                 const {
-                    inputType, key, placeholder,
+                    iconColor, iconType, inputType, key, placeholder,
                 } = input;
-                return InputField(key, placeholder, inputType);
+                return InputField(key, placeholder, iconColor, iconType, inputType);
             })}
         </Form.Item>
     );

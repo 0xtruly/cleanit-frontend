@@ -20,6 +20,8 @@ export const formInputs = [
 
     {
         className: '',
+        iconColor: 'rgba(0,0,0,.25)',
+        iconType: 'user',
         id: 'userName',
         inputType: 'text',
         key: 'name',
@@ -33,6 +35,8 @@ export const formInputs = [
 
     {
         className: '',
+        iconColor: 'rgba(0,0,0,.25)',
+        iconType: 'mail',
         id: 'email',
         inputType: 'email',
         key: 'email',
@@ -46,6 +50,8 @@ export const formInputs = [
 
     {
         className: '',
+        iconColor: 'rgba(0,0,0,.25)',
+        iconType: 'lock',
         id: 'password',
         inputType: 'password',
         key: 'password',
