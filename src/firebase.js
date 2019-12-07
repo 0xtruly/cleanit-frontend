@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const firebaseConfig = {
@@ -13,10 +13,48 @@ const firebaseConfig = {
 };
 
 export const loginToFirebase = firebase.initializeApp(firebaseConfig);
-const baseDb = loginToFirebase.firestore();
-export const db = baseDb;
-
 export const auth = loginToFirebase.auth();
+
+/**
+ * firebaseUI config rules
+ *
+ * @constant
+ */
+export const uiConfig = {
+    callbacks: {
+        signInSuccessWithAuthResult() {
+            return true;
+        },
+    },
+    signInOptions: [
+        {
+            customParameters: {
+                // Forces account selection even when one account
+                // is available.
+                prompt: 'select_account',
+            },
+            provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            scopes: [
+                'email',
+            ],
+        },
+        {
+            customParameters: {
+                // Forces password re-entry.
+                auth_type: 'reauthenticate',
+            },
+            provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            scopes: [
+                'public_profile',
+                'email',
+            ],
+        },
+        firebase.auth.TwitterAuthProvider.PROVIDER_ID, // Twitter does not support scopes.
+    ],
+    signInSuccessUrl: 'http://localhost:3000/dashboard',
+};
+
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
@@ -35,3 +73,4 @@ export const signUpWithEmail = async (email, password) => {
 };
 
 export default firebase;
+

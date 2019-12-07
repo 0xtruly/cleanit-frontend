@@ -9,6 +9,7 @@ const {
     LOGOUT_FAILURE,
     LOGOUT_REQUEST,
     LOGOUT_SUCCESS,
+    REMEMBER_USER,
     VERIFY_REQUEST,
     VERIFY_SUCCESS,
 } = actionTypes;
@@ -23,6 +24,7 @@ const initialState = {
     loginError: '',
     logoutError: '',
     password: '',
+    rememberUser: false,
 };
 
 export default (
@@ -63,6 +65,10 @@ export default (
     case LOGOUT_FAILURE:
         return {
             ...state, isLoggingOut: false, logoutError: action.error,
+        };
+    case REMEMBER_USER:
+        return {
+            ...state, rememberUser: action.payload,
         };
     case VERIFY_REQUEST:
         return {
