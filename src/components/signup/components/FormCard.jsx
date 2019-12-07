@@ -113,8 +113,5 @@ export function FormCard() {
     } else if (error !== {} && error !== null) {
         message.error({ content: 'An error occured, try again' });
     }
-    return (
-        FormComponent()
-    );
+    return FormComponent();
 }
-

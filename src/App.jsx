@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import Navbar from './components/navbar';
 import routes from './routes';
 import store from './store';
-
+        
 /**
  * Default AppJS file.
  * You must declare your Routes here to they Update appropriatele.
