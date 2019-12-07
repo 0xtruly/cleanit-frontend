@@ -1,8 +1,5 @@
 import firebase from 'firebase/app';
-import * as firebaseui from 'firebaseui';
-import 'firebaseui/dist/firebaseui.css';
 import 'firebase/auth';
-import 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -18,18 +15,11 @@ const firebaseConfig = {
 export const loginToFirebase = firebase.initializeApp(firebaseConfig);
 
 /**
- * Initializing the firebaseui
- *
- * @constant
- */
-const firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
-
-/**
  * firebaseUI config rules
  *
  * @constant
  */
-const uiConfig = {
+export const uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult() {
             return true;
@@ -62,6 +52,5 @@ const uiConfig = {
     ],
     signInSuccessUrl: 'http://localhost:3000/dashboard',
 };
-export const startFirebaseUI = firebaseUI.start('#social-card-auth-container', uiConfig);
 
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
