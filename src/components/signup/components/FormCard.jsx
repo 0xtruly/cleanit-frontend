@@ -45,8 +45,10 @@ function FormItemInput() {
     return (
         <Form.Item>
             {formInputs.map(input => {
-                const { inputType, key, placeholder } = input;
-                return InputField(key, placeholder, inputType);
+                const {
+                    inputType, key, password, placeholder,
+                } = input;
+                return InputField(key, password, placeholder, inputType);
             })}
         </Form.Item>
     );
@@ -109,8 +111,5 @@ export function FormCard() {
     } else if (error !== {} && error !== null) {
         message.error({ content: 'An error occured, try again' });
     }
-    return (
-        FormComponent()
-    );
+    return FormComponent();
 }
-

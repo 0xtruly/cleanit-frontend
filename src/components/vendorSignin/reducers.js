@@ -1,4 +1,4 @@
-import { actionTypes } from './actionTypes';
+import actionTypes from './actionTypes';
 
 const {
     LISTEN_FOR_INPUT,

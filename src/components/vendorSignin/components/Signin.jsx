@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Signin = () => (
+const VendorSignin = () => (
     <div>
         <div />
     </div>
 );
 
-export default Signin;
+export default VendorSignin;

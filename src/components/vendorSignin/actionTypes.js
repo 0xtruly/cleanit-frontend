@@ -1,4 +1,4 @@
-export const actionTypes = {
+const actionTypes = {
     LISTEN_FOR_INPUT: 'LISTEN_FOR_INPUT',
     SIGNIN_ERROR: 'SIGNIN_ERROR',
     SIGNIN_REQUEST: 'SIGNIN_REQUEST',
@@ -8,3 +8,5 @@ export const actionTypes = {
     VERIFICATION_REQUEST: 'VERIFICATION_REQUEST',
     VERIFICATION_SUCCESS: 'VERIFICATION_SUCCESS',
 };
+
+export default actionTypes;

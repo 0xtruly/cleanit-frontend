@@ -1,4 +1,4 @@
 import './style.scss';
-import Signin from './Signin';
+import VendorSignin from './Signin';
 
-export default Signin;
+export default VendorSignin;
