@@ -32,12 +32,24 @@ export const signInError = error => ({ error, type: SIGNIN_ERROR });
 
 /**
  *
- * @param {string} payload
+ * @param {string} payload session token from user object
  */
 export const signOutRequest = payload => ({ payload, type: SIGNOUT_REQUEST });
 
+/**
+ *
+ * @param {string} payload
+ */
 export const signOutSuccess = payload => ({ payload, type: SIGNOUT_SUCCESS });
 
+/**
+ *
+ * @param {string} payload
+ */
 export const verificationRequest = payload => ({ payload, type: VERIFICATION_REQUEST });
 
+/**
+ *
+ * @param {string} payload
+ */
 export const verificationSuccess = payload => ({ payload, type: VERIFICATION_SUCCESS });

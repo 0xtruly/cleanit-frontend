@@ -46,9 +46,9 @@ function FormItemInput() {
         <Form.Item>
             {formInputs.map(input => {
                 const {
-                    inputType, key, password, placeholder,
+                    inputType, key, placeholder,
                 } = input;
-                return InputField(key, password, placeholder, inputType);
+                return InputField(key, placeholder, inputType);
             })}
         </Form.Item>
     );
