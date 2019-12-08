@@ -50,6 +50,9 @@ export const LOGIN_STRINGS = {
     SIGN_UP_TEXT: "Don't have an account yet? ",
     SIGN_UP_URL: '/sign-up',
     SOCIAL_TEXT: 'You can also sign in using social media to gain quick access',
+    VENDOR_SIGN_IN_LINK_TEXT: 'Sign in as a vendor here.',
+    VENDOR_SIGN_IN_TEXT: 'Here to provide a service? ',
+    VENDOR_SIGN_IN_URL: '/vendor-sign-in',
 };
 
 /**

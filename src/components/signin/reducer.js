@@ -39,7 +39,7 @@ export default (
         }; }
     case LOGIN_REQUEST:
         return {
-            ...state, isLoggingIn: true, loginError: false, user: action.payload,
+            ...state, isLoggingIn: true, loginError: false,
         };
     case LOGIN_SUCCESS:
         return {
@@ -48,7 +48,7 @@ export default (
             isAuthenticated: true,
             isLoggingIn: false,
             password: '',
-            user: action.payload,
+            userObj: action.payload,
         };
     case LOGIN_FAILURE:
         return {

@@ -4,7 +4,7 @@ import 'firebase/auth';
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_ID,
     databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
     measurementId: process.env.REACT_APP_FIREBASE_MSG_ID,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
@@ -73,4 +73,3 @@ export const signUpWithEmail = async (email, password) => {
 };
 
 export default firebase;
-
