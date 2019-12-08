@@ -1,7 +1,6 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from 'firebase';
-import { uiConfig } from '../../../firebase';
+import { uiConfig, loginToFirebase } from '../../../firebase';
 import { LOGIN_STRINGS, BRAND_ALT_TEXT, BRAND_LOGO } from '../constants';
 
 const { SOCIAL_TEXT } = LOGIN_STRINGS;
@@ -15,7 +14,7 @@ export default function SocialCard() {
             <p className="social-title has-image">
                 <img src={BRAND_LOGO} alt={BRAND_ALT_TEXT} />
             </p>
-            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={loginToFirebase.auth()} />
         </div>
     );
 }
