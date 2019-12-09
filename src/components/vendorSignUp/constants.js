@@ -34,7 +34,6 @@ export const HELMET_STRINGS = {
  * @constant
  */
 export const LOGIN_STRINGS = {
-    CTA_TEXT: 'Sign Up',
     LOGIN_TITLE: 'Ready to provide quality service?',
     LOGIN_TITLE_SUBTEXT: 'Please sign up to continue',
     SIGN_IN_LINK_TEXT: 'Sign in here',
@@ -55,8 +54,8 @@ export const FORM_INPUTS = [{
     iconColor: 'rgba(0,0,0,.25)',
     iconType: 'user',
     inputType: 'text',
-    key: 'name',
-    name: 'vendorName',
+    key: 'fullName',
+    name: 'fullName',
     placeholder: 'Your name',
 }, {
     iconColor: 'rgba(0,0,0,.25)',
@@ -74,4 +73,4 @@ export const FORM_INPUTS = [{
     placeholder: 'Password',
 }];
 
-export const BUTTON_TEXT = 'Sign In';
+export const BUTTON_TEXT = 'Sign Up';
