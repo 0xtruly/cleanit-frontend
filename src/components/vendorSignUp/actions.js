@@ -37,7 +37,7 @@ export const requestLogout = () => ({ type: LOGOUT_REQUEST });
 * Receive data from Firebase on successful logout
 *
 * @constant
-* @param {Object} vendor - Sets the user object to null on successful logout.
+* @param {Object} vendor - Sets the vendor object to null on successful logout.
 */
 export const receiveLogout = vendor => ({ type: LOGOUT_SUCCESS, vendor });
 
