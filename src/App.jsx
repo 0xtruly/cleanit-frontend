@@ -2,21 +2,12 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import AOS from 'aos';
 import { Provider } from 'react-redux';
-import Homepage from './components/homepage';
 import Navbar from './components/navbar';
-import SignIn from './components/signin';
-import Signup from './components/signup';
-import VendorSignin from './components/vendorSignin';
+import routes from './routes';
 
 import store from './store';
 
 // Defining App routes
-const routes = [
-    { component: Homepage, exact: true, path: '/' },
-    { component: Signup, path: '/sign-up' },
-    { component: SignIn, path: '/sign-in' },
-    { component: VendorSignin, path: '/vendor-sign-in' },
-];
 
 /**
  * Default AppJS file.
@@ -33,7 +24,7 @@ const routes = [
 
 class App extends Component {
     componentDidMount() {
-        // Initializing the AOS library with options across the app
+    // Initializing the AOS library with options across the app
 
         AOS.init({
             delay: 10,

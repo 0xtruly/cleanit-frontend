@@ -8,13 +8,13 @@ const { JOIN, WELCOME } = STRINGS;
 
 /** This is the main component
  * for the form
-*/
+ */
 
 function SignupForm() {
     return (
         <div className="formContainer" data-test="formContainer">
             <Card className="formCard">
-                <h3>{WELCOME}</h3>
+                <h1>{WELCOME}</h1>
                 <p>{JOIN}</p>
                 <FormCard />
             </Card>

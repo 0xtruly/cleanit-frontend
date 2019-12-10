@@ -4,6 +4,12 @@
     place-items: center;
 }
 
+.container {
+    background: #F5F5F5;
+    min-height: 90vh;
+    padding: 5rem 0 3rem;
+}
+
 .formContainer {
     max-width: 500px;
     padding: 1rem;
@@ -12,17 +18,22 @@
     display: flex;
     flex-flow: column;
 }
+
 .formCard {
     border: none;
     background: #FEFEFE;
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.14);
-    h3 {
+
+    h1 {
         color: #1890FF;
-        font-size: 20px;
+        font-size: 38px;
+        font-weight: 600;
         @include centralize();
     }
+
     p {
         color: #979797;
+        opacity: .8;
         font-size: 12px;
         @include centralize();
     }
@@ -30,15 +41,16 @@
 
 .socialsCard {
     background: #083B69;
-    height: 8rem;
     border-radius: 0px 0px 5px 5px;
     display: flex;
     justify-content: space-around;
+
     .ant-card-body {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
     }
+
     .text {
         display: none;
     }
@@ -51,16 +63,20 @@
         margin-top: 1rem;
     }
 }
+
 .ant-btn-primary {
     .formCard & {
         width: 100%;
+        padding: 0rem 1.5rem;
+        font-weight: 700;
+        font-size: 1.5rem;
     }
 }
 
 @media only screen and (min-width: 48rem) {
     .formContainer {
         width: 400px;
-        margin: 4rem auto;   
+        margin: 4rem auto;
     }
 
     .signIn {
@@ -76,24 +92,39 @@
         display: grid;
         grid-template-columns: 3fr 1fr;
         max-width: 800px;
-        width: 600px;
+        width: 680px;
     }
 
     .socialsCard {
         height: unset;
         display: grid;
         border-radius: 0px 5px 5px 0px;
+
         .text {
             display: block;
-            & > .logo {
+
+            &>.logo {
                 display: table;
                 margin: 0 auto;
                 width: 60px;
             }
+
             & p {
                 color: #ffffff;
                 text-align: center;
                 margin-bottom: 2rem;
+            }
+        }
+
+        .social {
+            .firebaseui-idp-button {
+                padding: 8px 8px;
+                width: 11rem;
+            }
+
+            .firebaseui-idp-text {
+                font-size: .8rem;
+                padding: 10px 5px;
             }
         }
     }

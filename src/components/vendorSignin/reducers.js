@@ -20,18 +20,18 @@ export const initialState = {
     isVerifying: false,
     password: '',
     signinError: '',
+    signinSuccess: '',
 };
 
 export default (state = initialState, { type, payload }) => {
     switch (type) {
-    case LISTEN_FOR_INPUT: {
-        const { key, value } = payload;
-        return { ...state, [key]: value };
-    }
+    case LISTEN_FOR_INPUT:
+    { const { key, value } = payload;
+        return { ...state, [key]: value }; }
     case SIGNIN_REQUEST:
         return { ...state, isSigningIn: true };
     case SIGNIN_SUCCESS:
-        return { ...state, isSignedIn: true, isSigningIn: false };
+        return { ...state, isSignedIn: true, signinSuccess: payload };
     case SIGNIN_ERROR:
         return { ...state, isSignedIn: false, signinError: payload };
     case SIGNOUT_REQUEST:

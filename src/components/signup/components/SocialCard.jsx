@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button, Card } from 'antd';
-import { STRINGS, socialButton } from '../constants';
+import { Card } from 'antd';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { uiConfig, loginToFirebase } from '../../../firebase';
+import { STRINGS } from '../constants';
 
 const { LOGIN, LOGO } = STRINGS;
 
@@ -10,17 +12,11 @@ export const SocialCard = () => (
             <p>{LOGIN}</p>
             <img src={LOGO} className="logo" alt="logo" />
         </div>
-        {socialButton.map(button => {
-            const {
-                className, icon, key, text, type,
-            } = button;
-            return (
-                <div key={key} className={className}>
-                    <Button type={type} icon={icon}>
-                        {text}
-                    </Button>
-                </div>
-            );
-        })}
+        <div className="social">
+            <StyledFirebaseAuth
+                uiConfig={uiConfig}
+                firebaseAuth={loginToFirebase.auth()}
+            />
+        </div>
     </Card>
 );

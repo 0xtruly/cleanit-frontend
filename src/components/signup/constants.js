@@ -1,4 +1,3 @@
-
 const logoSuffix1 = 'cleanit-7147d.appspot.com/o/logo.svg';
 const logoSuffix2 = 'media&token=f8fed921-a485-4cb8-81e4-23069b98f801';
 
@@ -16,8 +15,7 @@ export const STRINGS = {
     WELCOME: 'Welcome',
 };
 
-export const formInputs = [
-
+export const FORM_INPUTS = [
     {
         className: '',
         iconColor: 'rgba(0,0,0,.25)',

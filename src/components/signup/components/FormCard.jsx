@@ -4,7 +4,7 @@ import {
     Form, Button, Input, message, Icon
 } from 'antd';
 import { NavLink } from 'react-router-dom';
-import { STRINGS, formInputs } from '../constants';
+import { STRINGS, FORM_INPUTS } from '../constants';
 import * as actions from '../actions';
 
 const { ALREADY, CREATE_ACCOUNT, SIGNIN } = STRINGS;
@@ -20,16 +20,20 @@ const { getInput, registerWithEmail } = actions;
  * @param {string} inputType signifies the type for each input field
  */
 
-function InputField(key, placeholder, iconColor, iconType, inputType) {
-    const dispatch = useDispatch();
+function InputField(input, dispatch) {
+    // const dispatch = useDispatch();
+    const {
+        iconColor, iconType, inputType, key, placeholder,
+    } = input;
     const icon = <Icon type={iconType} style={{ color: iconColor }} />;
     return (
         <Input
             key={key}
-            onChange={e => dispatch(getInput({ key, value: e.target.value }))}
+            onBlur={e => dispatch(getInput({ key, value: e.target.value }))}
             placeholder={placeholder}
             prefix={icon}
             type={inputType}
+            required
         />
     );
 }
@@ -43,16 +47,13 @@ function InputField(key, placeholder, iconColor, iconType, inputType) {
  * FormItemInput
  */
 
-function FormItemInput() {
+function FormItemInput(dispatch) {
     return (
-        <Form.Item>
-            {formInputs.map(input => {
-                const {
-                    iconColor, iconType, inputType, key, placeholder,
-                } = input;
-                return InputField(key, placeholder, iconColor, iconType, inputType);
-            })}
-        </Form.Item>
+        <div>
+            {FORM_INPUTS.map(input => (
+                <Form.Item key={input.key}>{InputField(input, dispatch)}</Form.Item>
+            ))}
+        </div>
     );
 }
 
@@ -63,8 +64,7 @@ function FormItemInput() {
  * of email, name and password in state
  */
 
-function FormButton() {
-    const dispatch = useDispatch();
+function FormButton(dispatch) {
     const data = useSelector(state => state);
     const {
         signup: { name, email, password },
@@ -88,10 +88,11 @@ function FormButton() {
  */
 
 function FormComponent() {
+    const dispatch = useDispatch();
     return (
         <Form className="sign-form" layout="horizontal">
-            {FormItemInput()}
-            {FormButton()}
+            {FormItemInput(dispatch)}
+            {FormButton(dispatch)}
             <span className="signIn">
                 {ALREADY}
                 <NavLink to="/">{SIGNIN}</NavLink>
