@@ -54,8 +54,8 @@ export const FORM_INPUTS = [{
     iconColor: 'rgba(0,0,0,.25)',
     iconType: 'user',
     inputType: 'text',
-    key: 'fullName',
-    name: 'fullName',
+    key: 'name',
+    name: 'name',
     placeholder: 'Your name',
 }, {
     iconColor: 'rgba(0,0,0,.25)',
