@@ -45,7 +45,6 @@ export const uiConfig = {
             provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
             scopes: ['public_profile', 'email'],
         },
-        // firebase.auth.TwitterAuthProvider.PROVIDER_ID, // Twitter does not support scopes.
     ],
     signInSuccessUrl: 'http://localhost:3000/dashboard',
 };

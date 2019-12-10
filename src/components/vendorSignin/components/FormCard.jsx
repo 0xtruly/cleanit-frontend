@@ -4,7 +4,7 @@ import { Card } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import { LOGIN_STRINGS } from '../constants';
 import SigninForm from './Form';
-import SocialCard from './Socials';
+
 
 const {
     LOGIN_TITLE,
@@ -19,7 +19,6 @@ const {
 
 /**
  * Renders the Link URL for a User to Sign Up newly.
- *
  * @constant
  */
 const renderSignUpView = (
@@ -33,7 +32,6 @@ const renderSignUpView = (
 
 /**
  * Renders both the AntdForm Component and the social cards component.
- *
  * @constant
  */
 const renderSignInViews = (
@@ -44,13 +42,11 @@ const renderSignInViews = (
             <SigninForm />
             {renderSignUpView}
         </Card>
-        <SocialCard />
     </div>
 );
 
 /**
  * Renders the Link URL for a vendor to Sign In
- *
  * @constant
  */
 const renderVendorSignInView = (

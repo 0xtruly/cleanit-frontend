@@ -10,33 +10,15 @@ import * as actions from '../actions';
 const { listenForInput, rememberMe, signInRequest } = actions;
 const { REMEMBER_ME, FORGOT_PASSWORD, FORGOT_PASSWORD_ROUTE } = LOGIN_STRINGS;
 
-/**
- *
- * @param {object} input whose properties are used
- * to map through the input field
- */
-function InputField(input) {
-    const dispatch = useDispatch();
-    const {
-        iconColor, iconType, inputType, key, placeholder,
-    } = input;
-    const icon = <Icon type={iconType} style={{ color: iconColor }} />;
+
+function InputField() {
     return (
-        <Input
-            key={key}
-            onBlur={e => dispatch(listenForInput({ key, value: e.target.value }))}
-            placeholder={placeholder}
-            prefix={icon}
-            type={inputType}
-            required
-        />
+        <Input />
     );
 }
 
 /**
- * 
- * @function {fuction} dispatch trigers the 'rememberMe' 
- * action when the checkbox is checked or unchecked.
+ * @function {fuction} dispatch
  */
 function checkBox(dispatch) {
     return (
@@ -47,12 +29,8 @@ function checkBox(dispatch) {
 }
 
 /**
- * 
- * @function {function} dispatch trigers the signInRequest 
- * action on click
- * @param {string} info contains the state of 
- * email, name and phone number when an onChange
- * even occurs on the input field
+ * @function {function} dispatch 
+ * @param {string} info
  */
 function signinButton(dispatch, info) {
     return (
@@ -83,19 +61,12 @@ function FormComponent(info) {
 }
 
 /**
- * 
- * @param {string} info 
- * @param {boolean} isSignedIn is set to true
- * when a user is successfully signed in and
- * false if otherwise.
+ * @param {string} info
+ * @param {boolean} isSignedIn 
  */
 function FormCard(info, isSignedIn) {
-    if (isSignedIn === true) {
-        return <Redirect to="/dashboard" />;
-    }
     return FormComponent(info);
 }
-
 
 function SigninForm() {
     const data = useSelector(state => state);

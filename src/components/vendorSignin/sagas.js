@@ -12,7 +12,7 @@ const { loginToFirebase } = firebase;
 const LOGIN_API_URL = process.env.REACT_APP_USER_AUTH_API;
 
 /**
- * 
+ *
  * @param {object} payload
  * @function {function} vendorLogin
  */

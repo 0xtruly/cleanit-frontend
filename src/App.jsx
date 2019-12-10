@@ -4,7 +4,6 @@ import AOS from 'aos';
 import { Provider } from 'react-redux';
 import Navbar from './components/navbar';
 import routes from './routes';
-
 import store from './store';
 
 // Defining App routes
