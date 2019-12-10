@@ -55,7 +55,7 @@ export const FORM_INPUTS = [{
     iconType: 'user',
     inputType: 'text',
     key: 'name',
-    name: 'vendorName',
+    name: 'name',
     placeholder: 'Your name',
 }, {
     iconColor: 'rgba(0,0,0,.25)',
