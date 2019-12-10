@@ -1,10 +1,7 @@
 import React from 'react';
-import FormView from './FormCard';
 
 const VendorSignin = () => (
-    <div>
-        <FormView />
-    </div>
+    <div />
 );
 
 export default VendorSignin;
