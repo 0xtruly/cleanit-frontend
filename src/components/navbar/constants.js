@@ -20,13 +20,6 @@ const menuItems = [{
     linkClassName: '',
     linkTo: '/',
     text: 'Home',
-},
-{
-    className: '',
-    key: 'about',
-    linkClassName: '',
-    linkTo: '/about-us',
-    text: 'About Us',
 }, {
     className: 'button-link',
     key: 'signUp',

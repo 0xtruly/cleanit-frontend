@@ -30,6 +30,7 @@ const Navbar = () => {
                             className="navbar-group"
                             onClick={handleClick}
                             selectedKeys={[currentNav]}
+                            triggerSubMenuAction="click"
                             mode="horizontal"
                         >
                             {menuItems.map(menu => {

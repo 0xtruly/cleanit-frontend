@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    Button, Checkbox, Form, Icon, Input
+    Button, Checkbox, Form, Input
 } from 'antd';
 import { formInputs, BUTTON_TEXT, LOGIN_STRINGS } from '../constants';
 import * as actions from '../actions';
 
-const { listenForInput, rememberMe, signInRequest } = actions;
+const { rememberMe, signInRequest } = actions;
 const { REMEMBER_ME, FORGOT_PASSWORD, FORGOT_PASSWORD_ROUTE } = LOGIN_STRINGS;
-
 
 function InputField() {
     return (
@@ -29,7 +28,7 @@ function checkBox(dispatch) {
 }
 
 /**
- * @function {function} dispatch 
+ * @function {function} dispatch
  * @param {string} info
  */
 function signinButton(dispatch, info) {
@@ -62,9 +61,9 @@ function FormComponent(info) {
 
 /**
  * @param {string} info
- * @param {boolean} isSignedIn 
+ * @param {boolean} isSignedIn
  */
-function FormCard(info, isSignedIn) {
+function FormCard(info) {
     return FormComponent(info);
 }
 

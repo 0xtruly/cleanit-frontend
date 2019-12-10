@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const firebaseConfig = {
@@ -8,7 +8,7 @@ const firebaseConfig = {
     databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
     measurementId: process.env.REACT_APP_FIREBASE_MSG_ID,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
-    projectId: 'cleanit-7147d',
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
     storageBucket: process.env.REACT_APP_FIREBASE_STR_BUCKET,
 };
 
@@ -26,7 +26,6 @@ export const uiConfig = {
             return true;
         },
     },
-    signInFlow: 'redirect',
     signInOptions: [
         {
             customParameters: {
@@ -35,7 +34,9 @@ export const uiConfig = {
                 prompt: 'select_account',
             },
             provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            scopes: ['email'],
+            scopes: [
+                'email',
+            ],
         },
         {
             customParameters: {
@@ -43,7 +44,10 @@ export const uiConfig = {
                 auth_type: 'reauthenticate',
             },
             provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            scopes: ['public_profile', 'email'],
+            scopes: [
+                'public_profile',
+                'email',
+            ],
         },
     ],
     signInSuccessUrl: 'http://localhost:3000/dashboard',

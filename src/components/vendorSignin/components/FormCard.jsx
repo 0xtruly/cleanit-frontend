@@ -5,7 +5,6 @@ import Title from 'antd/lib/typography/Title';
 import { LOGIN_STRINGS } from '../constants';
 import SigninForm from './Form';
 
-
 const {
     LOGIN_TITLE,
     LOGIN_TITLE_SUBTEXT,

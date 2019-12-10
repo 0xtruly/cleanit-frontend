@@ -3,28 +3,25 @@ import { actionTypes } from './actionTypes';
 // Destructuring actionTYpes
 const {
     INPUT_LISTEN,
-    LOGIN_REQUEST,
-    LOGIN_FAILURE,
-    LOGIN_SUCCESS,
+    SIGNUP_REQUEST,
+    SIGNUP_FAILURE,
+    SIGNUP_SUCCESS,
     LOGOUT_FAILURE,
     LOGOUT_REQUEST,
     LOGOUT_SUCCESS,
-    REMEMBER_USER,
     VERIFY_REQUEST,
     VERIFY_SUCCESS,
 } = actionTypes;
 
 const initialState = {
-    email: '',
     isAuthenticated: false,
     isLoggingIn: false,
     isLoggingOut: false,
     isVerified: false,
     isVerifying: false,
-    loginError: '',
     logoutError: '',
     password: '',
-    rememberUser: false,
+    signUpError: '',
 };
 
 export default (
@@ -37,22 +34,22 @@ export default (
         return {
             ...state, [key]: value,
         }; }
-    case LOGIN_REQUEST:
+    case SIGNUP_REQUEST:
         return {
-            ...state, isLoggingIn: true, loginError: false,
+            ...state, isLoggingIn: true, signUpError: false,
         };
-    case LOGIN_SUCCESS:
+    case SIGNUP_SUCCESS:
         return {
             ...state,
             email: '',
             isAuthenticated: true,
             isLoggingIn: false,
             password: '',
-            userObj: action.payload,
+            vendorObj: action.payload,
         };
-    case LOGIN_FAILURE:
+    case SIGNUP_FAILURE:
         return {
-            ...state, isAuthenticated: false, isLoggingIn: false, loginError: action.error,
+            ...state, isAuthenticated: false, isLoggingIn: false, signUpError: action.error,
         };
     case LOGOUT_REQUEST:
         return {
@@ -60,15 +57,11 @@ export default (
         };
     case LOGOUT_SUCCESS:
         return {
-            ...state, isAuthenticated: false, isLoggingOut: false, user: {},
+            ...state, isAuthenticated: false, isLoggingOut: false, vendor: {},
         };
     case LOGOUT_FAILURE:
         return {
             ...state, isLoggingOut: false, logoutError: action.error,
-        };
-    case REMEMBER_USER:
-        return {
-            ...state, rememberUser: action.payload,
         };
     case VERIFY_REQUEST:
         return {
@@ -82,4 +75,3 @@ export default (
         return state;
     }
 };
-
