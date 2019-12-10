@@ -2,17 +2,22 @@ import {
     Form,
     Icon,
     Input,
-    Button
+    Button,
+    Checkbox
 } from 'antd';
+
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 import PropTypes from 'prop-types';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { FORM_INPUTS, BUTTON_TEXT } from '../constants';
+import { FORM_INPUTS, BUTTON_TEXT, LOGIN_STRINGS } from '../constants';
 import { actionTypes } from '../actionTypes';
 
-const { LOGIN_REQUEST, INPUT_LISTEN } = actionTypes;
+const { REMEMBER_ME, FORGOT_PASSWORD, FORGOT_PASSWORD_ROUTE } = LOGIN_STRINGS;
+
+const { LOGIN_REQUEST, INPUT_LISTEN, REMEMBER_USER } = actionTypes;
 
 /**
  * Renders the Input fields.
@@ -26,6 +31,7 @@ function input(item, dispatch) {
     const icon = <Icon type={item.iconType} style={{ color: item.iconColor }} />;
     return (
         <Input
+            allowClear
             onBlur={e => dispatch({
                 payload: { key, value: e.target.value },
                 type: INPUT_LISTEN,
@@ -36,6 +42,18 @@ function input(item, dispatch) {
             placeholder={item.placeholder}
             required
         />
+    );
+}
+
+function checkBox(dispatch) {
+    return (
+        <Checkbox onChange={e => dispatch({
+            payload: e.target.checked,
+            type: REMEMBER_USER,
+        })}
+        >
+            {REMEMBER_ME}
+        </Checkbox>
     );
 }
 
@@ -53,6 +71,10 @@ function formItem(dispatch, handleSubmit) {
                     {input(item, dispatch)}
                 </Form.Item>
             ))}
+            <div className="remember-me">
+                {checkBox(dispatch)}
+                <Link to={FORGOT_PASSWORD_ROUTE}>{FORGOT_PASSWORD}</Link>
+            </div>
             <Button htmlType="submit" className="btn-sign-in">
                 {BUTTON_TEXT}
             </Button>

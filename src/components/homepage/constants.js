@@ -30,14 +30,10 @@ export const HELMET_STRINGS = {
 export const MAIN_CONTENT = {
     HERO_DESC: 'CleanIT is your on-demand laundry service middle-man. As a User, we  ' + 'provide you the means to meet hundreds of laundry service providers with a resolve ' + 'to provide quality and efficient service. As a Vendor, we provide you the means to ' + 'meet thousands of people who require laundry services.',
     HERO_IMG: Artwork,
-    HERO_TITLE: 'Let us help you worry-less about your laundry',
+    HERO_TITLE: 'Let us help you worry-less about your laundry needs',
     LINKS: [{
         link_class: 'btn-primary -large -mr-2',
-        link_text: 'Sign Up',
+        link_text: 'Get Started Now',
         link_to: '/sign-up',
-    }, {
-        link_class: 'btn-primary -alternate -large',
-        link_text: 'Login',
-        link_to: '/login',
     }],
 };
