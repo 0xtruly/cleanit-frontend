@@ -88,7 +88,6 @@ function formItem(dispatch, handleSubmit) {
  * @function
  */
 function SignInForm() {
-    // const [user, setUser] = useState({ email: '', userpassword: '' });
     const dispatch = useDispatch();
     const data = useSelector(state => state);
     const { signIn: { email, password } } = data;

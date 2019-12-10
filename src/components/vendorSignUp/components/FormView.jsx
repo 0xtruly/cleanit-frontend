@@ -22,8 +22,10 @@ const { SIGNUP_REQUEST, INPUT_LISTEN } = actionTypes;
 * @param {*} dispatch - useDispatch from react-redux.
 */
 function input(item, dispatch) {
-    const { key } = item;
-    const icon = <Icon type={item.iconType} style={{ color: item.iconColor }} />;
+    const {
+        key, iconType, iconColor, inputType, placeholder,
+    } = item;
+    const icon = <Icon type={iconType} style={{ color: iconColor }} />;
     return (
         <Input
             allowClear
@@ -31,10 +33,10 @@ function input(item, dispatch) {
                 payload: { key, value: e.target.value },
                 type: INPUT_LISTEN,
             })}
-            key={item.key}
-            type={item.inputType}
+            key={key}
+            type={inputType}
             prefix={(icon)}
-            placeholder={item.placeholder}
+            placeholder={placeholder}
             required
         />
     );
@@ -67,7 +69,6 @@ function formItem(dispatch, handleSubmit) {
 * @function
 */
 function SignUpForm() {
-    // const [user, setUser] = useState({ email: '', userpassword: '' });
     const dispatch = useDispatch();
     const data = useSelector(state => state);
     const { vendorSignUp: { email, password } } = data;
